@@ -69,6 +69,15 @@
 	#+BEGIN_SRC org
 	,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src.css" />
 	#+END_SRC
+** Web Site
+*** https://fliar.github.io
+**** This web site does not supply ownership information.
+	 outsourcing css caused this issue, simply move css to github solved this problem
+	 #+BEGIN_SRC org
+	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
+	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
+	 #+END_SRC
+
 * Linux
 ** Tools
 *** iftop
