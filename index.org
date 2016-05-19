@@ -7,6 +7,29 @@
 
 * Cross Platform
 ** emacs
+*** my installed package
+	for the record when i need to reinstall emacs
+	| Package Name | Description                            |
+	|--------------+----------------------------------------|
+	| ahk-mode     | auto hot key script mode, windows only |
+	| async        | c?                                     |
+	| cmake-mode   | cmake mode                             |
+	| company      | company mode                           |
+	| flymake-lua  |                                        |
+	| helm         | helm mode                              |
+	| helm-company | helm interface for company             |
+	| helm-core    |                                        |
+	| helm-flymake |                                        |
+	| helm-gtags   | helm interface for gnu global          |
+	| helm-swoop   |                                        |
+	| htmlize      | html coloring for org export           |
+	| ivy          | c?                                     |
+	| lua-mode     | editing lua                            |
+	| multi-term   | terminal inside emacs                  |
+	| org          | i'm writing this with org mode         |
+	| popup        | c?                                     |
+	| swiper       | c?                                     |
+
 *** org-mode
 **** customize source block style
 	 create a css for src:
