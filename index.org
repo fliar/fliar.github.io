@@ -1,21 +1,23 @@
 #+SETUPFILE: theme-readtheorg.setup
-#+TITLE:     Logs
+#+TITLE:     Notes
 #+AUTHOR:    Fliar Start
 #+EMAIL:     (concat "fliar" at-sign "live.jp")
-#+OPTIONS: H:4 num:nil toc:3
+#+OPTIONS: H:5 num:nil toc:3
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="" />
 
-* 2016
-** May
-*** <2016-05-18 Wed>
-**** add emacs auto hot key script branch
-** April
-*** <2016-04-18 Mon>
-**** change theme to read the org
-**** remove number order
-**** change toc level
-**** remove old css
-*** <2016-04-15 Fri>
-**** first day log: start
-**** rename this to index
-**** change output directory
+* Linux
+** Tools
+*** iftop
+**** display issue
+ iftop works well under lxterminal like this:
+ #+CAPTION: normal iftop
+ #+NAME: iftop good
+ [[./pic/2016/iftop_g.png]]
+ but has char issue in emacs terminal or putty:
+ #+CAPTION: bad iftop
+ #+NAME: iftop bad
+ [[./pic/2016/iftop_ng.png]]
+ to solve this, add param before launching iftop
+ #+BEGIN_SRC bash
+ sudo NCURSES_NO_UTF8_ACS=1 iftop
+ #+END_SRC

@@ -1,0 +1,21 @@
+#+SETUPFILE: theme-readtheorg.setup
+#+TITLE:     Logs
+#+AUTHOR:    Fliar Start
+#+EMAIL:     (concat "fliar" at-sign "live.jp")
+#+OPTIONS: H:4 num:nil toc:3
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="" />
+
+* 2016
+** May
+*** <2016-05-18 Wed>
+**** add emacs auto hot key script branch
+** April
+*** <2016-04-18 Mon>
+**** change theme to read the org
+**** remove number order
+**** change toc level
+**** remove old css
+*** <2016-04-15 Fri>
+**** first day log: start
+**** rename this to index
+**** change output directory

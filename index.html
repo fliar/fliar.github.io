@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-05-19 Thu 11:05 -->
+<!-- 2016-05-19 Thu 13:09 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
-<title>Logs</title>
+<title>Notes</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Fliar Start" />
 <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
@@ -65,22 +65,16 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Logs</h1>
+<h1 class="title">Notes</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline14">2016</a>
+<li><a href="#orgheadline4">Linux</a>
 <ul>
-<li><a href="#orgheadline3">May</a>
+<li><a href="#orgheadline3">Tools</a>
 <ul>
-<li><a href="#orgheadline2"><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-05-18 Wed&gt;</span></span></a></li>
-</ul>
-</li>
-<li><a href="#orgheadline13">April</a>
-<ul>
-<li><a href="#orgheadline8"><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-04-18 Mon&gt;</span></span></a></li>
-<li><a href="#orgheadline12"><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-04-15 Fri&gt;</span></span></a></li>
+<li><a href="#orgheadline2">iftop</a></li>
 </ul>
 </li>
 </ul>
@@ -89,50 +83,35 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgheadline14" class="outline-2">
-<h2 id="orgheadline14">2016</h2>
-<div class="outline-text-2" id="text-orgheadline14">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 </div><div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">May</h3>
+<h3 id="orgheadline3">Tools</h3>
 <div class="outline-text-3" id="text-orgheadline3">
 </div><div id="outline-container-orgheadline2" class="outline-4">
-<h4 id="orgheadline2"><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-05-18 Wed&gt;</span></span></h4>
+<h4 id="orgheadline2">iftop</h4>
 <div class="outline-text-4" id="text-orgheadline2">
 </div><div id="outline-container-orgheadline1" class="outline-5">
-<h5 id="orgheadline1">add emacs auto hot key script branch</h5>
+<h5 id="orgheadline1">display issue</h5>
+<div class="outline-text-5" id="text-orgheadline1">
+<p>
+iftop works well under lxterminal like this:
+</p>
+<p>
+<img src="./pic/2016/iftop_g.png" alt="iftop_g.png" />
+but has char issue in emacs terminal or putty:
+</p>
+<p>
+<img src="./pic/2016/iftop_ng.png" alt="iftop_ng.png" />
+to solve this, add param before launching iftop
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">sudo NCURSES_NO_UTF8_ACS=1 iftop
+</pre>
 </div>
 </div>
-</div>
-<div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13">April</h3>
-<div class="outline-text-3" id="text-orgheadline13">
-</div><div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="orgheadline8"><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-04-18 Mon&gt;</span></span></h4>
-<div class="outline-text-4" id="text-orgheadline8">
-</div><div id="outline-container-orgheadline4" class="outline-5">
-<h5 id="orgheadline4">change theme to read the org</h5>
-</div>
-<div id="outline-container-orgheadline5" class="outline-5">
-<h5 id="orgheadline5">remove number order</h5>
-</div>
-<div id="outline-container-orgheadline6" class="outline-5">
-<h5 id="orgheadline6">change toc level</h5>
-</div>
-<div id="outline-container-orgheadline7" class="outline-5">
-<h5 id="orgheadline7">remove old css</h5>
-</div>
-</div>
-<div id="outline-container-orgheadline12" class="outline-4">
-<h4 id="orgheadline12"><span class="timestamp-wrapper"><span class="timestamp">&lt;2016-04-15 Fri&gt;</span></span></h4>
-<div class="outline-text-4" id="text-orgheadline12">
-</div><div id="outline-container-orgheadline9" class="outline-5">
-<h5 id="orgheadline9">first day log: start</h5>
-</div>
-<div id="outline-container-orgheadline10" class="outline-5">
-<h5 id="orgheadline10">rename this to index</h5>
-</div>
-<div id="outline-container-orgheadline11" class="outline-5">
-<h5 id="orgheadline11">change output directory</h5>
 </div>
 </div>
 </div>
@@ -140,7 +119,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Fliar Start</p>
-<p class="date">Created: 2016-05-19 Thu 11:05</p>
+<p class="date">Created: 2016-05-19 Thu 13:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
