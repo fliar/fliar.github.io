@@ -5,19 +5,59 @@
 #+OPTIONS: H:5 num:nil toc:3
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src.css" />
 
+* Cross Platform
+** emacs
+*** org-mode
+**** customize source block style
+	 create a css for src:
+	 #+BEGIN_SRC css
+	 pre.src {
+     	font-family: sans-serif;
+		font-size: 95%;
+		color: #93a1a1;
+		background-color: #002b36;
+		padding: 2px;
+		border: #a7a7a7 1px solid;
+		line-height: 120%
+	}
+	 div.src { 
+     	border: #a7a7a7 1px solid;
+		background-color: #002b36;
+		padding: 2px;
+		overflow: auto;
+	}
+	 div.src {
+     	font-family: sans-serif;
+		font-size: 95%;
+		color: #93a1a1;
+		padding: 0px;
+		line-height: 120%;
+		margin: 0px;
+	}
+	div.src p {
+    	font-family: sans-serif;
+		font-size: 95%;
+		color: #93a1a1;
+		padding: 0px;
+		line-height: 120%;
+		margin: 0px;
+	}
+	#+END_SRC
+	add HTML head to org file
+	#+BEGIN_SRC org
+	,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src.css" />
+	#+END_SRC
 * Linux
 ** Tools
 *** iftop
 **** display issue
- iftop works well under lxterminal like this:
- #+CAPTION: normal iftop
- #+NAME: iftop good
- [[./pic/2016/iftop_g.png]]
- but has char issue in emacs terminal or putty:
- #+CAPTION: bad iftop
- #+NAME: iftop bad
- [[./pic/2016/iftop_ng.png]]
- to solve this, add param before launching iftop
- #+BEGIN_SRC bash
- sudo NCURSES_NO_UTF8_ACS=1 iftop
- #+END_SRC
+	 iftop works well under lxterminal like this:
+	 #+CAPTION: normal iftop
+	 [[./pic/2016/iftop_g.png]]
+	 but has char issue in emacs terminal or putty:
+	 #+CAPTION: bad iftop
+	 [[./pic/2016/iftop_ng.png]]
+	 to solve this, add param before launching iftop
+	 #+BEGIN_SRC bash
+	 sudo NCURSES_NO_UTF8_ACS=1 iftop
+	 #+END_SRC

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-05-19 Thu 14:09 -->
+<!-- 2016-05-19 Thu 14:24 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -70,11 +70,20 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline4">Linux</a>
+<li><a href="#orgheadline4">Cross Platform</a>
 <ul>
-<li><a href="#orgheadline3">Tools</a>
+<li><a href="#orgheadline3">emacs</a>
 <ul>
-<li><a href="#orgheadline2">iftop</a></li>
+<li><a href="#orgheadline2">org-mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline8">Linux</a>
+<ul>
+<li><a href="#orgheadline7">Tools</a>
+<ul>
+<li><a href="#orgheadline6">iftop</a></li>
 </ul>
 </li>
 </ul>
@@ -84,17 +93,80 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-orgheadline4" class="outline-2">
-<h2 id="orgheadline4">Linux</h2>
+<h2 id="orgheadline4">Cross Platform</h2>
 <div class="outline-text-2" id="text-orgheadline4">
 </div><div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">Tools</h3>
+<h3 id="orgheadline3">emacs</h3>
 <div class="outline-text-3" id="text-orgheadline3">
 </div><div id="outline-container-orgheadline2" class="outline-4">
-<h4 id="orgheadline2">iftop</h4>
+<h4 id="orgheadline2">org-mode</h4>
 <div class="outline-text-4" id="text-orgheadline2">
 </div><div id="outline-container-orgheadline1" class="outline-5">
-<h5 id="orgheadline1">display issue</h5>
+<h5 id="orgheadline1">customize source block style</h5>
 <div class="outline-text-5" id="text-orgheadline1">
+<p>
+create a css for src:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #fce94f;"> pre.src </span>{
+    <span style="color: #fcaf3e;">font-family</span>: sans-serif;
+    <span style="color: #fcaf3e;">font-size</span>: 95%;
+    <span style="color: #fcaf3e;">color</span>: #93a1a1;
+    <span style="color: #fcaf3e;">background-color</span>: #002b36;
+    <span style="color: #fcaf3e;">padding</span>: 2px;
+    <span style="color: #fcaf3e;">border</span>: #a7a7a7 1px solid;
+    <span style="color: #fcaf3e;">line-height</span>: 120%
+}
+<span style="color: #fce94f;"> div.src </span>{ 
+    <span style="color: #fcaf3e;">border</span>: #a7a7a7 1px solid;
+    <span style="color: #fcaf3e;">background-color</span>: #002b36;
+    <span style="color: #fcaf3e;">padding</span>: 2px;
+    <span style="color: #fcaf3e;">overflow</span>: auto;
+}
+<span style="color: #fce94f;"> div.src </span>{
+    <span style="color: #fcaf3e;">font-family</span>: sans-serif;
+    <span style="color: #fcaf3e;">font-size</span>: 95%;
+    <span style="color: #fcaf3e;">color</span>: #93a1a1;
+    <span style="color: #fcaf3e;">padding</span>: 0px;
+    <span style="color: #fcaf3e;">line-height</span>: 120%;
+    <span style="color: #fcaf3e;">margin</span>: 0px;
+}
+<span style="color: #fce94f;">div.src p </span>{
+    <span style="color: #fcaf3e;">font-family</span>: sans-serif;
+    <span style="color: #fcaf3e;">font-size</span>: 95%;
+    <span style="color: #fcaf3e;">color</span>: #93a1a1;
+    <span style="color: #fcaf3e;">padding</span>: 0px;
+    <span style="color: #fcaf3e;">line-height</span>: 120%;
+    <span style="color: #fcaf3e;">margin</span>: 0px;
+}
+</pre>
+</div>
+<p>
+add HTML head to org file
+</p>
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #73d216;">#+HTML_HEAD: &lt;link rel="stylesheet" type="text/css" href="src.css" /&gt;</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline8">
+</div><div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline7">
+</div><div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6">iftop</h4>
+<div class="outline-text-4" id="text-orgheadline6">
+</div><div id="outline-container-orgheadline5" class="outline-5">
+<h5 id="orgheadline5">display issue</h5>
+<div class="outline-text-5" id="text-orgheadline5">
 <p>
 iftop works well under lxterminal like this:
 </p>
@@ -119,7 +191,7 @@ to solve this, add param before launching iftop
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Fliar Start</p>
-<p class="date">Created: 2016-05-19 Thu 14:09</p>
+<p class="date">Created: 2016-05-19 Thu 14:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
