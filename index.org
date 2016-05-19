@@ -4,7 +4,6 @@
 #+EMAIL:     (concat "fliar" at-sign "live.jp")
 #+OPTIONS: H:5 num:nil toc:3
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src.css" />
-
 * Cross Platform
 ** emacs
 *** my installed package
@@ -83,4 +82,34 @@
 	 to solve this, add param before launching iftop
 	 #+BEGIN_SRC bash
 	 sudo NCURSES_NO_UTF8_ACS=1 iftop
+	 #+END_SRC
+* Windows
+** Tools
+*** Auto Hot Key
+**** nested if statement
+	 nested if is not allowed in ahk script:	 
+	 #+BEGIN_SRC bash
+	 if a
+	 {
+	 	if b
+		{
+			...
+		}
+	 }
+	 #+END_SRC
+	 you can wrap it to another function:
+	 #+BEGIN_SRC bash
+	 fb(b)
+	 {
+	 	if b
+		{
+			...
+		}
+	 }
+	 
+
+	 if a
+	 {
+	 	fb(b)
+	 }
 	 #+END_SRC
