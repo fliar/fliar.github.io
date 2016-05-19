@@ -3,7 +3,7 @@
 #+AUTHOR:    Fliar Start
 #+EMAIL:     (concat "fliar" at-sign "live.jp")
 #+OPTIONS: H:5 num:nil toc:3
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src.css" />
 
 * Linux
 ** Tools
