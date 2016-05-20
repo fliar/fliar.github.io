@@ -1,124 +1,21 @@
 #+SETUPFILE: theme-readtheorg.setup
-#+TITLE:     Notes
+#+TITLE:     Logs
 #+AUTHOR:    Fliar Start
 #+EMAIL:     (concat "fliar" at-sign "live.jp")
-#+OPTIONS: H:5 num:nil toc:3
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/src.css" />
-* Cross Platform
-** emacs
-*** my installed package
-	for the record when i need to reinstall emacs
-	| Package Name | Description                            |
-	|--------------+----------------------------------------|
-	| ahk-mode     | auto hot key script mode, windows only |
-	| async        | c?                                     |
-	| cmake-mode   | cmake mode                             |
-	| company      | company mode                           |
-	| flymake-lua  |                                        |
-	| helm         | helm mode                              |
-	| helm-company | helm interface for company             |
-	| helm-core    |                                        |
-	| helm-flymake |                                        |
-	| helm-gtags   | helm interface for gnu global          |
-	| helm-swoop   |                                        |
-	| htmlize      | html coloring for org export           |
-	| ivy          | c?                                     |
-	| lua-mode     | editing lua                            |
-	| multi-term   | terminal inside emacs                  |
-	| org          | i'm writing this with org mode         |
-	| popup        | c?                                     |
-	| swiper       | c?                                     |
+#+OPTIONS: H:4 num:nil toc:3
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="" />
 
-*** org-mode
-**** customize source block style
-	 create a css for src:
-	 #+BEGIN_SRC css
-	 pre.src {
-     	font-family: sans-serif;
-		font-size: 95%;
-		color: #93a1a1;
-		background-color: #002b36;
-		padding: 2px;
-		border: #a7a7a7 1px solid;
-		line-height: 120%
-	}
-	 div.src { 
-     	border: #a7a7a7 1px solid;
-		background-color: #002b36;
-		padding: 2px;
-		overflow: auto;
-	}
-	 div.src {
-     	font-family: sans-serif;
-		font-size: 95%;
-		color: #93a1a1;
-		padding: 0px;
-		line-height: 120%;
-		margin: 0px;
-	}
-	div.src p {
-    	font-family: sans-serif;
-		font-size: 95%;
-		color: #93a1a1;
-		padding: 0px;
-		line-height: 120%;
-		margin: 0px;
-	}
-	#+END_SRC
-	add HTML head to org file
-	#+BEGIN_SRC org
-	,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="src.css" />
-	#+END_SRC
-** Web Site
-*** https://fliar.github.io
-**** This web site does not supply ownership information.
-	 outsourcing css caused this issue, simply move css to github solved this problem
-	 #+BEGIN_SRC org
-	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
-	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
-	 #+END_SRC
-
-* Linux
-** Tools
-*** iftop
-**** display issue
-	 iftop works well under lxterminal like this:
-	 #+CAPTION: normal iftop
-	 [[./pic/2016/iftop_g.png]]
-	 but has char issue in emacs terminal or putty:
-	 #+CAPTION: bad iftop
-	 [[./pic/2016/iftop_ng.png]]
-	 to solve this, add param before launching iftop
-	 #+BEGIN_SRC bash
-	 sudo NCURSES_NO_UTF8_ACS=1 iftop
-	 #+END_SRC
-* Windows
-** Tools
-*** Auto Hot Key
-**** nested if statement
-	 nested if is not allowed in ahk script:	 
-	 #+BEGIN_SRC bash
-	 if a
-	 {
-	 	if b
-		{
-			...
-		}
-	 }
-	 #+END_SRC
-	 you can wrap it to another function:
-	 #+BEGIN_SRC bash
-	 fb(b)
-	 {
-	 	if b
-		{
-			...
-		}
-	 }
-	 
-
-	 if a
-	 {
-	 	fb(b)
-	 }
-	 #+END_SRC
+* 2016
+** May
+*** <2016-05-18 Wed>
+**** add emacs auto hot key script branch
+** April
+*** <2016-04-18 Mon>
+**** change theme to read the org
+**** remove number order
+**** change toc level
+**** remove old css
+*** <2016-04-15 Fri>
+**** first day log: start
+**** rename this to index
+**** change output directory
