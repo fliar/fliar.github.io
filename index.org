@@ -3,19 +3,15 @@
 #+AUTHOR:    Fliar Start
 #+EMAIL:     (concat "fliar" at-sign "live.jp")
 #+OPTIONS: H:4 num:nil toc:3
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/src.css" />
 
 * 2016
 ** May
-*** <2016-05-18 Wed>
-**** add emacs auto hot key script branch
-** April
-*** <2016-04-18 Mon>
-**** change theme to read the org
-**** remove number order
-**** change toc level
-**** remove old css
-*** <2016-04-15 Fri>
-**** first day log: start
-**** rename this to index
-**** change output directory
+*** <2016-05-20 Fri>
+**** [[file:notes.org::*link to external org file headline][org-mode:link to external org file headline]]					  :emacs:
+*** <2016-05-19 Thu>
+**** [[file:notes.org::*my installed package][my installed package]]											  :emacs:
+**** [[file:notes.org::*customize source block style][org-mode:customize source block style]] 							  :emacs:
+**** [[file:notes.org::*This web site does not supply ownership information.][This web site does not supply ownership information.]] 			  :https:
+**** [[file:notes.org::*display issue][iftop display issue]]											  :linux:
+**** [[file:notes.org::*nested if statement][nested if statement]]												:ahk:
