@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-05-24 Tue 15:44 -->
+<!-- 2016-05-24 Tue 16:45 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -86,16 +86,16 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline16">Linux</a>
+<li><a href="#orgheadline17">Linux</a>
 <ul>
 <li><a href="#Linux Tools">Tools</a>
 <ul>
 <li><a href="#iftop">iftop</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline15">Distributions</a>
+<li><a href="#orgheadline16">Distributions</a>
 <ul>
-<li><a href="#orgheadline14">Ubuntu</a></li>
+<li><a href="#orgheadline15">Ubuntu</a></li>
 </ul>
 </li>
 </ul>
@@ -339,9 +339,9 @@ outsourcing css caused this issue, simply move css to github solved this problem
 </div>
 </div>
 
-<div id="outline-container-orgheadline16" class="outline-2">
-<h2 id="orgheadline16">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline16">
+<div id="outline-container-orgheadline17" class="outline-2">
+<h2 id="orgheadline17">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline17">
 </div><div id="outline-container-orgheadline12" class="outline-3">
 <h3 id="Linux Tools"><a id="orgheadline12"></a>Tools</h3>
 <div class="outline-text-3" id="text-Linux Tools">
@@ -373,12 +373,12 @@ to solve this, add param before launching iftop
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline15" class="outline-3">
-<h3 id="orgheadline15">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline15">
-</div><div id="outline-container-orgheadline14" class="outline-4">
-<h4 id="orgheadline14">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgheadline14">
+<div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline16">
+</div><div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgheadline15">
 </div><div id="outline-container-orgheadline13" class="outline-5">
 <h5 id="orgheadline13">show version</h5>
 <div class="outline-text-5" id="text-orgheadline13">
@@ -389,24 +389,41 @@ to solve this, add param before launching iftop
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
 
-<div id="outline-container-orgheadline20" class="outline-2">
-<h2 id="Windows"><a id="orgheadline20"></a>Windows</h2>
+<div id="outline-container-orgheadline14" class="outline-5">
+<h5 id="orgheadline14">auto run on startup</h5>
+<div class="outline-text-5" id="text-orgheadline14">
+<ul class="org-ul">
+<li>edit /etc/rc.local, add command to run on startup:</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">nohup sh -c <span style="color: #e9b96e;">"/home/fliar/downloads/lantern_linux_amd64 -addr 0.0.0.0:8888 &amp;&gt; /dev/null"</span> &amp;&gt; /dev/null
+<span style="color: #b4fa70;">exit</span> 0 <span style="color: #73d216;"># </span><span style="color: #73d216;">last line of rc.local</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>note that rc.local should end with a value(exit 0)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="Windows"><a id="orgheadline21"></a>Windows</h2>
 <div class="outline-text-2" id="text-Windows">
 </div>
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="Windows Tools"><a id="orgheadline19"></a>Tools</h3>
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="Windows Tools"><a id="orgheadline20"></a>Tools</h3>
 <div class="outline-text-3" id="text-Windows Tools">
 </div>
-<div id="outline-container-orgheadline18" class="outline-4">
-<h4 id="ahk"><a id="orgheadline18"></a>Auto Hot Key</h4>
+<div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="ahk"><a id="orgheadline19"></a>Auto Hot Key</h4>
 <div class="outline-text-4" id="text-ahk">
 </div>
-<div id="outline-container-orgheadline17" class="outline-5">
-<h5 id="ahk nested if statement"><a id="orgheadline17"></a>nested if statement</h5>
+<div id="outline-container-orgheadline18" class="outline-5">
+<h5 id="ahk nested if statement"><a id="orgheadline18"></a>nested if statement</h5>
 <div class="outline-text-5" id="text-ahk nested if statement">
 <p>
 nested if is not allowed in ahk script:     

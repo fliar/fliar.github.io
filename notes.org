@@ -146,6 +146,13 @@
 	 | Release:        | 16.04            |
 	 | Codename:       | xenial           |
 
+**** auto run on startup
+	 - edit /etc/rc.local, add command to run on startup:
+	 #+BEGIN_SRC sh
+	 nohup sh -c "/home/fliar/downloads/lantern_linux_amd64 -addr 0.0.0.0:8888 &> /dev/null" &> /dev/null
+	 exit 0 # last line of rc.local
+	 #+END_SRC
+	 - note that rc.local should end with a value(exit 0)
 * Windows
   :PROPERTIES:
   :CUSTOM_ID: Windows

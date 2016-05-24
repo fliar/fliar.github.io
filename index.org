@@ -8,6 +8,7 @@
 ** May
 *** <2016-05-24 Tue>
 **** [[file:notes.org::*show version][display ubuntu version]]											  :linux:
+**** [[file:notes.org::*auto run on startup][autorun on startup]]												  :linux:
 *** <2016-05-20 Fri>
 **** [[file:notes.org::*link to external org file headline][org-mode:link to external org file headline]]					  :emacs:
 *** <2016-05-19 Thu>
