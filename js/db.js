@@ -6,7 +6,7 @@ var config = {
 	storageBucket: "fliargh.appspot.com",
 };
 firebase.initializeApp(config);
-
+/*
 firebase.auth().signInAnonymously().catch(function(error) {
 	var errCode = error.code;
 	var errMsg = error.message;
@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		//alert("user signed out");
 	}
 });
-
+*/
 var dbRef = firebase.database().ref('info/count');
 dbRef.on('value', function(snapshot) {
 	updateCount(snapshot.val());
