@@ -2,8 +2,11 @@
 #+TITLE:     Logs
 #+AUTHOR:    Fliar Start
 #+EMAIL:     (concat "fliar" at-sign "live.jp")
+,#+BIND: org-html-postamble-format (("en" "abcxyz"))
 #+OPTIONS: H:4 num:nil toc:3
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/src.css" />
+#+HTML_HEAD: <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+#+HTML_HEAD: <script src="js/db.js"></script>
 
 * 2016
 ** May
