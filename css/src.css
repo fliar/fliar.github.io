@@ -1,5 +1,5 @@
 pre.src {
-    font-family: sans-serif;
+    font-family: Inconsolata;
     font-size: 95%;
     color: #93a1a1;
     background-color: #002b36;
@@ -16,7 +16,7 @@ div.src {
  }
 
 div.src {
-    font-family: sans-serif;
+    font-family: Inconsolata;
     font-size: 95%;
     color: #93a1a1;
     padding: 0px;
@@ -25,7 +25,7 @@ div.src {
 }
 
 div.src p {
-    font-family: sans-serif;
+    font-family: Inconsolata;
     font-size: 95%;
     color: #93a1a1;
     padding: 0px;
