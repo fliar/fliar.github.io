@@ -1,9 +1,9 @@
 #+SETUPFILE: theme-readtheorg.setup
 #+TITLE:     Notes
 #+AUTHOR:    Fliar Start
-#+EMAIL:     (concat "fliar" at-sign "live.jp")
+#+EMAIL:     fliar@live.jp
 #+OPTIONS: H:5 num:nil toc:3
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/src.css" />
+
 * Cross Platform
   :PROPERTIES:
   :CUSTOM_ID: cross platform
@@ -111,9 +111,6 @@
 	 #+END_SRC
 
 * Linux
-  :PROPERTIES:
-  :CUSTOM_ID: Linux
-  :END:
 ** Tools
    :PROPERTIES:
    :CUSTOM_ID: Linux Tools
@@ -136,6 +133,19 @@
 	 #+BEGIN_SRC bash
 	 sudo NCURSES_NO_UTF8_ACS=1 iftop
 	 #+END_SRC
+** Distributions
+*** Ubuntu
+**** show version
+	 #+BEGIN_SRC sh
+	 lsb_release -a
+	 #+END_SRC
+
+	 #+RESULTS:
+	 | Distributor ID: | Ubuntu           |
+	 | Description:    | Ubuntu 16.04 LTS |
+	 | Release:        | 16.04            |
+	 | Codename:       | xenial           |
+
 * Windows
   :PROPERTIES:
   :CUSTOM_ID: Windows

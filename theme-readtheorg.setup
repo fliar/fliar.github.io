@@ -7,3 +7,7 @@
 #+HTML_HEAD: <script src="js/bootstrap.min.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="js/jquery.stickytableheaders.min.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="js/readtheorg.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/src.css" />
+#+HTML_HEAD: <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+#+HTML_HEAD: <script src="js/db.js"></script>
+

@@ -1,14 +1,13 @@
 #+SETUPFILE: theme-readtheorg.setup
 #+TITLE:     Logs
 #+AUTHOR:    Fliar Start
-#+EMAIL:     (concat "fliar" at-sign "live.jp")
+#+EMAIL:     fliar@live.jp
 #+OPTIONS: H:4 num:nil toc:3
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/src.css" />
-#+HTML_HEAD: <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-#+HTML_HEAD: <script src="js/db.js"></script>
 
 * 2016
 ** May
+*** <2016-05-24 Tue>
+**** [[file:notes.org::*show version][display ubuntu version]]											  :linux:
 *** <2016-05-20 Fri>
 **** [[file:notes.org::*link to external org file headline][org-mode:link to external org file headline]]					  :emacs:
 *** <2016-05-19 Thu>
