@@ -96,7 +96,7 @@
    :PROPERTIES:
    :CUSTOM_ID: Web Site
    :END:
-*** https://fliar.github.io
+*** fliar.github.io
 	:PROPERTIES:
 	:CUSTOM_ID: fliar.github.io
 	:END:
