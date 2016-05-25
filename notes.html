@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-05-25 Wed 17:12 -->
+<!-- 2016-05-25 Wed 17:40 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -345,15 +345,23 @@ outsourcing css caused this issue, simply move css to github solved this problem
 <h5 id="orgheadline8">RESTful API basic:get data</h5>
 <div class="outline-text-5" id="text-orgheadline8">
 <ul class="org-ul">
-<li>simply using curl, add .json to the url address:
-print=pretty makes it more readable.</li>
-</ul>
+<li><p>
+simply using curl, add .json to the url address:
+print=pretty makes it more readable.
+</p>
 <div class="org-src-container">
 
 <pre class="src src-sh">curl <span style="color: #e9b96e;">'https://xxxxxx.firebaseio.com/pub.json?print=pretty'</span>
 </pre>
 </div>
-<ul class="org-ul">
+
+<div class="org-src-container">
+
+<pre class="src src-sh">{
+  <span style="color: #e9b96e;">"error"</span> : <span style="color: #e9b96e;">"Permission denied"</span>
+}
+</pre>
+</div></li>
 <li><p>
 auth param will bypass the rules for db:
 for instance, if your db secret is 123 (could be found in settings/database),rules for your db is like this:
@@ -372,6 +380,15 @@ when executing:
 <div class="org-src-container">
 
 <pre class="src src-sh">curl <span style="color: #e9b96e;">'https://xxxxxx.firebaseio.com/pub.json?auth=123&amp;print=pretty'</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">{
+  <span style="color: #e9b96e;">"001"</span> : 99,
+  <span style="color: #e9b96e;">"abc"</span> : <span style="color: #e9b96e;">"aaa"</span>
+}
 </pre>
 </div>
 <p>
@@ -429,6 +446,15 @@ to solve this, add param before launching iftop
 <div class="org-src-container">
 
 <pre class="src src-sh">lsb_release -a
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">Distributor ID:    Ubuntu
+Description:   Ubuntu 16.04 LTS
+Release:   16.04
+Codename:  xenial
 </pre>
 </div>
 </div>

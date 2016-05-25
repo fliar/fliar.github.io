@@ -114,15 +114,16 @@
 **** RESTful API basic:get data
 	 - simply using curl, add .json to the url address:
 	   print=pretty makes it more readable.
-	 #+BEGIN_SRC sh
-	 curl 'https://xxxxxx.firebaseio.com/pub.json?print=pretty'
-	 #+END_SRC
+	   #+BEGIN_SRC sh :exports both :results code
+	   curl 'https://xxxxxx.firebaseio.com/pub.json?print=pretty'
+	   #+END_SRC
 
-	 #+RESULTS:
-	 | {   |   |     |
-	 | 1   | : | 99, |
-	 | abc | : | aaa |
-	 | }   |   |     |
+	   #+RESULTS:
+	   #+BEGIN_SRC sh
+	   {
+		 "error" : "Permission denied"
+	   }
+	   #+END_SRC
 	 - auth param will bypass the rules for db:
 	   for instance, if your db secret is 123 (could be found in settings/database),rules for your db is like this:
 	   #+BEGIN_SRC json
@@ -132,15 +133,17 @@
        },
 	   #+END_SRC
 	   when executing:
-	   #+BEGIN_SRC sh
+	   #+BEGIN_SRC sh :exports both :results value html
 	   curl 'https://xxxxxx.firebaseio.com/pub.json?auth=123&print=pretty'
 	   #+END_SRC
 
 	   #+RESULTS:
-	   | {   |   |     |
-	   | 1   | : | 99, |
-	   | abc | : | aaa |
-	   | }   |   |     |
+	   #+BEGIN_SRC sh
+	   {
+		 "001" : 99,
+		 "abc" : "aaa"
+	   }
+	   #+END_SRC
 	   your data will show as well
 * Linux
 ** Tools
@@ -168,15 +171,17 @@
 ** Distributions
 *** Ubuntu
 **** show version
-	 #+BEGIN_SRC sh
+	 #+BEGIN_SRC sh :exports both :results code
 	 lsb_release -a
 	 #+END_SRC
 
 	 #+RESULTS:
-	 | Distributor ID: | Ubuntu           |
-	 | Description:    | Ubuntu 16.04 LTS |
-	 | Release:        | 16.04            |
-	 | Codename:       | xenial           |
+	 #+BEGIN_SRC sh
+	 Distributor ID:	Ubuntu
+	 Description:	Ubuntu 16.04 LTS
+	 Release:	16.04
+	 Codename:	xenial
+	 #+END_SRC
 
 **** auto run on startup
 	 - edit /etc/rc.local, add command to run on startup:
