@@ -6,6 +6,8 @@
 
 * 2016
 ** May
+*** <2016-05-25 Wed>
+**** [[file:notes.org::*RESTful API basic:get data][firebase: get data using curl]]								   :firebase:
 *** <2016-05-24 Tue>
 **** [[file:notes.org::*show version][display ubuntu version]]											  :linux:
 **** [[file:notes.org::*auto run on startup][autorun on startup]]												  :linux:

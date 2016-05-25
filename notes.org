@@ -110,6 +110,38 @@
 	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
 	 #+END_SRC
 
+*** firebase
+**** RESTful API basic:get data
+	 - simply using curl, add .json to the url address:
+	   print=pretty makes it more readable.
+	 #+BEGIN_SRC sh
+	 curl 'https://xxxxxx.firebaseio.com/pub.json?print=pretty'
+	 #+END_SRC
+
+	 #+RESULTS:
+	 | {   |   |     |
+	 | 1   | : | 99, |
+	 | abc | : | aaa |
+	 | }   |   |     |
+	 - auth param will bypass the rules for db:
+	   for instance, if your db secret is 123 (could be found in settings/database),rules for your db is like this:
+	   #+BEGIN_SRC json
+	   "pub": {
+       	".read": false,
+       	".write": false,
+       },
+	   #+END_SRC
+	   when executing:
+	   #+BEGIN_SRC sh
+	   curl 'https://xxxxxx.firebaseio.com/pub.json?auth=123&print=pretty'
+	   #+END_SRC
+
+	   #+RESULTS:
+	   | {   |   |     |
+	   | 1   | : | 99, |
+	   | abc | : | aaa |
+	   | }   |   |     |
+	   your data will show as well
 * Linux
 ** Tools
    :PROPERTIES:
