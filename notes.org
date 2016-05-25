@@ -114,7 +114,7 @@
 **** RESTful API basic:get data
 	 - simply using curl, add .json to the url address:
 	   print=pretty makes it more readable.
-	   #+BEGIN_SRC sh :exports both :results code
+	   #+BEGIN_SRC sh :exports both :results code :eval no-export
 	   curl 'https://xxxxxx.firebaseio.com/pub.json?print=pretty'
 	   #+END_SRC
 
@@ -133,7 +133,7 @@
        },
 	   #+END_SRC
 	   when executing:
-	   #+BEGIN_SRC sh :exports both :results value html
+	   #+BEGIN_SRC sh :exports both :results code :eval no-export
 	   curl 'https://xxxxxx.firebaseio.com/pub.json?auth=123&print=pretty'
 	   #+END_SRC
 
@@ -171,7 +171,7 @@
 ** Distributions
 *** Ubuntu
 **** show version
-	 #+BEGIN_SRC sh :exports both :results code
+	 #+BEGIN_SRC sh :exports both :results code :eval no-export
 	 lsb_release -a
 	 #+END_SRC
 
