@@ -61,9 +61,9 @@ body{
 #content{
     background:#fcfcfc;
     height:100%;
-    margin-left:300px;
+    margin-left:23%;
     /* margin:auto; */
-    max-width:800px;
+    max-width:75%;
     min-height:100%;
     padding:1.618em 3.236em;
 }
@@ -723,10 +723,10 @@ hr{
     position:fixed;
     top:0;
     left:0;
-    width:300px;
+    width:23%;
     overflow-x:hidden;
-    overflow-y:scroll;
-    height:100%;
+    overflow-y:auto;
+    height:83%;
     background:#343131;
     z-index:200;
     scrollbar-base-color: #1F1D1D;
@@ -825,7 +825,7 @@ footer p{
     position:fixed;
     bottom:0;
     left:0;
-    width:300px;
+    width:23%;
     color:#fcfcfc;
     background:#1f1d1d;
     border-top:solid 10px #343131;
