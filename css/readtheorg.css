@@ -59,11 +59,11 @@ body{
 }
 
 #content{
-	/*position:relative;*/
+	position:relative;
     background:#fcfcfc;
     height:100%;
     left:23%;
-    /* margin:auto; */
+    /*margin:auto;*/
     max-width:75%;
     min-height:100%;
     padding:1.618em 3.236em;
