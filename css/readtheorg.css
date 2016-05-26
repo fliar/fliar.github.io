@@ -59,9 +59,9 @@ body{
 }
 
 #content{
+	position:relative;
     background:#fcfcfc;
     height:100%;
-	left: 23%;
     margin-left:23%;
     /* margin:auto; */
     max-width:75%;
