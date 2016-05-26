@@ -3,7 +3,8 @@
 #+AUTHOR:    Fliar Start
 #+EMAIL:     fliar@live.jp
 #+OPTIONS: H:5 num:nil toc:3
-
+#+PROPERTY: header-args+ :eval no-export
+#+PROPERTY: header-args+ :exports both
 * Cross Platform
   :PROPERTIES:
   :CUSTOM_ID: cross platform
@@ -92,6 +93,43 @@
 	   #+END_SRC
 	   headline name should be exact headline name in name.org
 	 - link can be edited with c-c c-l
+**** eval source block and export
+	 - make a source block, specifying source and result type
+	   #+BEGIN_SRC org
+	   ,#+BEGIN_SRC sh :result code
+	   	lsb_release -a
+	   ,#+END_SRC
+	   #+END_SRC
+	 - c-c c-c to run the source
+	   #+BEGIN_SRC org
+	   ,#+BEGIN_SRC sh :result code
+	   	lsb_release -a
+	   ,#+END_SRC
+	   ,#+RESULTS:
+	   ,#+BEGIN_SRC sh
+	    Distributor ID:	Ubuntu
+	    Description:	Ubuntu 16.04 LTS
+		Release:	16.04
+		Codename:	xenial
+	   ,#+END_SRC
+	   #+END_SRC
+	   make sure language is loaded in org-babel-do-load-languages
+	 - disable eval on export:
+	   #+BEGIN_SRC org
+	   ,#+PROPERTY: header-args+ :eval no-export
+	   #+END_SRC
+	   or eval will be prompted every time you export
+	 - export both source and result:
+	   use ":export both" at block header 
+	   #+BEGIN_SRC org
+	   ,#+BEGIN_SRC sh :export both
+	    lsb_release -a
+	   ,#+END_SRC
+	   #+END_SRC
+	   or set to header-args
+	   #+BEGIN_SRC org
+	   ,#+PROPERTY: header-args+ :exports both
+	   #+END_SRC
 ** Web Site
    :PROPERTIES:
    :CUSTOM_ID: Web Site
@@ -114,7 +152,7 @@
 **** RESTful API basic:get data
 	 - simply using curl, add .json to the url address:
 	   print=pretty makes it more readable.
-	   #+BEGIN_SRC sh :exports both :results code :eval no-export
+	   #+BEGIN_SRC sh :results code
 	   curl 'https://xxxxxx.firebaseio.com/pub.json?print=pretty'
 	   #+END_SRC
 
@@ -133,7 +171,7 @@
        },
 	   #+END_SRC
 	   when executing:
-	   #+BEGIN_SRC sh :exports both :results code :eval no-export
+	   #+BEGIN_SRC sh :results code
 	   curl 'https://xxxxxx.firebaseio.com/pub.json?auth=123&print=pretty'
 	   #+END_SRC
 
@@ -171,7 +209,7 @@
 ** Distributions
 *** Ubuntu
 **** show version
-	 #+BEGIN_SRC sh :exports both :results code :eval no-export
+	 #+BEGIN_SRC sh :results code 
 	 lsb_release -a
 	 #+END_SRC
 
