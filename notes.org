@@ -6,17 +6,8 @@
 #+PROPERTY: header-args+ :eval no-export
 #+PROPERTY: header-args+ :exports both
 * Cross Platform
-  :PROPERTIES:
-  :CUSTOM_ID: cross platform
-  :END:
 ** emacs
-   :PROPERTIES:
-   :CUSTOM_ID: emacs
-   :END:
 *** my installed package
-	:PROPERTIES:
-	:CUSTOM_ID: installed package
-	:END:
 	for the record when i need to reinstall emacs
 	| Package Name | Description                            |
 	|--------------+----------------------------------------|
@@ -40,13 +31,7 @@
 	| swiper       | c?                                     |
 
 *** org-mode
-	:PROPERTIES:
-	:CUSTOM_ID: org mode
-	:END:
 **** customize source block style
-	 :PROPERTIES:
-	 :CUSTOM_ID: customize source block style
-	 :END:
 	 create a css for src:
 	 #+BEGIN_SRC css
 	 pre.src {
@@ -131,13 +116,7 @@
 	   ,#+PROPERTY: header-args+ :exports both
 	   #+END_SRC
 ** Web Site
-   :PROPERTIES:
-   :CUSTOM_ID: Web Site
-   :END:
 *** fliar.github.io
-	:PROPERTIES:
-	:CUSTOM_ID: fliar.github.io
-	:END:
 **** read the org css fine tune
 	 the mobile view of read the org looks badly like this:
 	 #+ATTR_HTML: :width 50% :height 50%
@@ -161,9 +140,6 @@
 	 [[./pic/2016/rto_g.jpg]]
 
 **** This web site does not supply ownership information.
-	 :PROPERTIES:
-	 :CUSTOM_ID: This web site does not supply ownership information
-	 :END:
 	 outsourcing css caused this issue, simply move css to github solved this problem
 	 #+BEGIN_SRC org
 	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
@@ -206,17 +182,8 @@
 	   your data will show as well
 * Linux
 ** Tools
-   :PROPERTIES:
-   :CUSTOM_ID: Linux Tools
-   :END:
 *** iftop
-	:PROPERTIES:
-	:CUSTOM_ID: iftop
-	:END:
 **** display issue
-	 :PROPERTIES:
-	 :CUSTOM_ID: iftop display issue
-	 :END:
 	 iftop works well under lxterminal like this:
 	 #+CAPTION: normal iftop
 	 [[./pic/2016/iftop_g.png]]
@@ -250,21 +217,9 @@
 	 #+END_SRC
 	 - note that rc.local should end with a value(exit 0)
 * Windows
-  :PROPERTIES:
-  :CUSTOM_ID: Windows
-  :END:
 ** Tools
-   :PROPERTIES:
-   :CUSTOM_ID: Windows Tools
-   :END:
 *** Auto Hot Key
-	:PROPERTIES:
-	:CUSTOM_ID: ahk
-	:END:
 **** nested if statement
-	 :PROPERTIES:
-	 :CUSTOM_ID: ahk nested if statement
-	 :END:
 	 nested if is not allowed in ahk script:	 
 	 #+BEGIN_SRC bash
 	 if a
