@@ -138,6 +138,28 @@
 	:PROPERTIES:
 	:CUSTOM_ID: fliar.github.io
 	:END:
+**** read the org css fine tune
+	 the mobile view of read the org looks badly like this:
+	 #+ATTR_HTML: :width 50% :height 50%
+	 [[./pic/2016/rto_ng.jpg]]
+
+	 to solve this, change all 300px to percentage(eg.23%), add position, and left to content:
+	 #+BEGIN_SRC css
+	 #content{
+	 	position:relative;
+		background:#fcfcfc;
+		height:100%;
+		left:23%;
+		/*margin:auto;*/
+		max-width:75%;
+		min-height:100%;
+		padding:1.618em 3.236em;
+	 }
+	 #+END_SRC
+	 not very well but works:
+	 #+ATTR_HTML: :width 50% :height 50%
+	 [[./pic/2016/rto_g.jpg]]
+
 **** This web site does not supply ownership information.
 	 :PROPERTIES:
 	 :CUSTOM_ID: This web site does not supply ownership information
@@ -147,7 +169,6 @@
 	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
 	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
 	 #+END_SRC
-
 *** firebase
 **** RESTful API basic:get data
 	 - simply using curl, add .json to the url address:

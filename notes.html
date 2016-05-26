@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-05-26 Thu 13:46 -->
+<!-- 2016-05-26 Thu 16:55 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -82,21 +82,21 @@ for the JavaScript code in this tag.
 <li><a href="#Web Site">Web Site</a>
 <ul>
 <li><a href="#fliar.github.io">fliar.github.io</a></li>
-<li><a href="#orgheadline10">firebase</a></li>
+<li><a href="#orgheadline11">firebase</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline20">Linux</a>
+<li><a href="#orgheadline21">Linux</a>
 <ul>
 <li><a href="#Linux Tools">Tools</a>
 <ul>
 <li><a href="#iftop">iftop</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline19">Distributions</a>
+<li><a href="#orgheadline20">Distributions</a>
 <ul>
-<li><a href="#orgheadline18">Ubuntu</a></li>
+<li><a href="#orgheadline19">Ubuntu</a></li>
 </ul>
 </li>
 </ul>
@@ -113,8 +113,8 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline12" class="outline-2">
-<h2 id="cross platform"><a id="orgheadline12"></a>Cross Platform</h2>
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="cross platform"><a id="orgheadline13"></a>Cross Platform</h2>
 <div class="outline-text-2" id="text-cross platform">
 </div>
 <div id="outline-container-orgheadline6" class="outline-3">
@@ -380,16 +380,56 @@ or set to header-args
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline11" class="outline-3">
-<h3 id="Web Site"><a id="orgheadline11"></a>Web Site</h3>
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="Web Site"><a id="orgheadline12"></a>Web Site</h3>
 <div class="outline-text-3" id="text-Web Site">
 </div>
-<div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="fliar.github.io"><a id="orgheadline8"></a>fliar.github.io</h4>
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="fliar.github.io"><a id="orgheadline9"></a>fliar.github.io</h4>
 <div class="outline-text-4" id="text-fliar.github.io">
 </div>
 <div id="outline-container-orgheadline7" class="outline-5">
-<h5 id="This web site does not supply ownership information"><a id="orgheadline7"></a>This web site does not supply ownership information.</h5>
+<h5 id="orgheadline7">read the org css fine tune</h5>
+<div class="outline-text-5" id="text-orgheadline7">
+<p>
+the mobile view of read the org looks badly like this:
+</p>
+
+<div class="figure">
+<p><img src="./pic/2016/rto_ng.jpg" alt="rto_ng.jpg" width="50%" height="50%" />
+</p>
+</div>
+
+<p>
+to solve this, change all 300px to percentage(eg.23%), add position, and left to content:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #fce94f;">#content</span>{
+   <span style="color: #fcaf3e;">position</span>:relative;
+   <span style="color: #fcaf3e;">background</span>:#fcfcfc;
+   <span style="color: #fcaf3e;">height</span>:100%;
+   <span style="color: #fcaf3e;">left</span>:23%;
+   <span style="color: #73d216;">/*</span><span style="color: #73d216;">margin:auto;</span><span style="color: #73d216;">*/</span>
+   <span style="color: #fcaf3e;">max-width</span>:75%;
+   <span style="color: #fcaf3e;">min-height</span>:100%;
+   <span style="color: #fcaf3e;">padding</span>:1.618em 3.236em;
+}
+</pre>
+</div>
+<p>
+not very well but works:
+</p>
+
+<div class="figure">
+<p><img src="./pic/2016/rto_g.jpg" alt="rto_g.jpg" width="50%" height="50%" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-5">
+<h5 id="This web site does not supply ownership information"><a id="orgheadline8"></a>This web site does not supply ownership information.</h5>
 <div class="outline-text-5" id="text-This web site does not supply ownership information">
 <p>
 outsourcing css caused this issue, simply move css to github solved this problem
@@ -403,13 +443,12 @@ outsourcing css caused this issue, simply move css to github solved this problem
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgheadline10" class="outline-4">
-<h4 id="orgheadline10">firebase</h4>
-<div class="outline-text-4" id="text-orgheadline10">
-</div><div id="outline-container-orgheadline9" class="outline-5">
-<h5 id="orgheadline9">RESTful API basic:get data</h5>
-<div class="outline-text-5" id="text-orgheadline9">
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11">firebase</h4>
+<div class="outline-text-4" id="text-orgheadline11">
+</div><div id="outline-container-orgheadline10" class="outline-5">
+<h5 id="orgheadline10">RESTful API basic:get data</h5>
+<div class="outline-text-5" id="text-orgheadline10">
 <ul class="org-ul">
 <li><p>
 simply using curl, add .json to the url address:
@@ -466,19 +505,19 @@ your data will show as well
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline20" class="outline-2">
-<h2 id="orgheadline20">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline20">
-</div><div id="outline-container-orgheadline15" class="outline-3">
-<h3 id="Linux Tools"><a id="orgheadline15"></a>Tools</h3>
+<div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="orgheadline21">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline21">
+</div><div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="Linux Tools"><a id="orgheadline16"></a>Tools</h3>
 <div class="outline-text-3" id="text-Linux Tools">
 </div>
-<div id="outline-container-orgheadline14" class="outline-4">
-<h4 id="iftop"><a id="orgheadline14"></a>iftop</h4>
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="iftop"><a id="orgheadline15"></a>iftop</h4>
 <div class="outline-text-4" id="text-iftop">
 </div>
-<div id="outline-container-orgheadline13" class="outline-5">
-<h5 id="iftop display issue"><a id="orgheadline13"></a>display issue</h5>
+<div id="outline-container-orgheadline14" class="outline-5">
+<h5 id="iftop display issue"><a id="orgheadline14"></a>display issue</h5>
 <div class="outline-text-5" id="text-iftop display issue">
 <p>
 iftop works well under lxterminal like this:
@@ -500,15 +539,15 @@ to solve this, add param before launching iftop
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="orgheadline19">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline19">
-</div><div id="outline-container-orgheadline18" class="outline-4">
-<h4 id="orgheadline18">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgheadline18">
-</div><div id="outline-container-orgheadline16" class="outline-5">
-<h5 id="orgheadline16">show version</h5>
-<div class="outline-text-5" id="text-orgheadline16">
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline20">
+</div><div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgheadline19">
+</div><div id="outline-container-orgheadline17" class="outline-5">
+<h5 id="orgheadline17">show version</h5>
+<div class="outline-text-5" id="text-orgheadline17">
 <div class="org-src-container">
 
 <pre class="src src-sh">lsb_release -a
@@ -526,9 +565,9 @@ Codename:  xenial
 </div>
 </div>
 
-<div id="outline-container-orgheadline17" class="outline-5">
-<h5 id="orgheadline17">auto run on startup</h5>
-<div class="outline-text-5" id="text-orgheadline17">
+<div id="outline-container-orgheadline18" class="outline-5">
+<h5 id="orgheadline18">auto run on startup</h5>
+<div class="outline-text-5" id="text-orgheadline18">
 <ul class="org-ul">
 <li>edit /etc/rc.local, add command to run on startup:</li>
 </ul>
@@ -546,20 +585,20 @@ Codename:  xenial
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline24" class="outline-2">
-<h2 id="Windows"><a id="orgheadline24"></a>Windows</h2>
+<div id="outline-container-orgheadline25" class="outline-2">
+<h2 id="Windows"><a id="orgheadline25"></a>Windows</h2>
 <div class="outline-text-2" id="text-Windows">
 </div>
-<div id="outline-container-orgheadline23" class="outline-3">
-<h3 id="Windows Tools"><a id="orgheadline23"></a>Tools</h3>
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="Windows Tools"><a id="orgheadline24"></a>Tools</h3>
 <div class="outline-text-3" id="text-Windows Tools">
 </div>
-<div id="outline-container-orgheadline22" class="outline-4">
-<h4 id="ahk"><a id="orgheadline22"></a>Auto Hot Key</h4>
+<div id="outline-container-orgheadline23" class="outline-4">
+<h4 id="ahk"><a id="orgheadline23"></a>Auto Hot Key</h4>
 <div class="outline-text-4" id="text-ahk">
 </div>
-<div id="outline-container-orgheadline21" class="outline-5">
-<h5 id="ahk nested if statement"><a id="orgheadline21"></a>nested if statement</h5>
+<div id="outline-container-orgheadline22" class="outline-5">
+<h5 id="ahk nested if statement"><a id="orgheadline22"></a>nested if statement</h5>
 <div class="outline-text-5" id="text-ahk nested if statement">
 <p>
 nested if is not allowed in ahk script:     
