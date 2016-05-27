@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-05-27 Fri 11:44 -->
+<!-- 2016-05-27 Fri 17:18 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -71,41 +71,42 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline14">Cross Platform</a>
+<li><a href="#orgheadline17">Cross Platform</a>
 <ul>
-<li><a href="#orgheadline7">emacs</a>
+<li><a href="#orgheadline10">emacs</a>
 <ul>
 <li><a href="#orgheadline1">my installed package</a></li>
-<li><a href="#orgheadline6">org-mode</a></li>
+<li><a href="#orgheadline9">org-mode</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline13">Web Site</a>
+<li><a href="#orgheadline16">Web Site</a>
 <ul>
-<li><a href="#orgheadline10">fliar.github.io</a></li>
-<li><a href="#orgheadline12">firebase</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgheadline25">Linux</a>
-<ul>
-<li><a href="#orgheadline17">Tools</a>
-<ul>
-<li><a href="#orgheadline16">iftop</a></li>
-</ul>
-</li>
-<li><a href="#orgheadline24">Distributions</a>
-<ul>
-<li><a href="#orgheadline23">Ubuntu</a></li>
+<li><a href="#orgheadline13">fliar.github.io</a></li>
+<li><a href="#orgheadline15">firebase</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline29">Windows</a>
+<li><a href="#orgheadline30">Linux</a>
 <ul>
-<li><a href="#orgheadline28">Tools</a>
+<li><a href="#orgheadline22">Tools</a>
 <ul>
-<li><a href="#orgheadline27">Auto Hot Key</a></li>
+<li><a href="#orgheadline19">iftop</a></li>
+<li><a href="#orgheadline21">bash</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline29">Distributions</a>
+<ul>
+<li><a href="#orgheadline28">Ubuntu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline34">Windows</a>
+<ul>
+<li><a href="#orgheadline33">Tools</a>
+<ul>
+<li><a href="#orgheadline32">Auto Hot Key</a></li>
 </ul>
 </li>
 </ul>
@@ -113,12 +114,13 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline14" class="outline-2">
-<h2 id="orgheadline14">Cross Platform</h2>
-<div class="outline-text-2" id="text-orgheadline14">
-</div><div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7">emacs</h3>
-<div class="outline-text-3" id="text-orgheadline7">
+
+<div id="outline-container-orgheadline17" class="outline-2">
+<h2 id="orgheadline17">Cross Platform</h2>
+<div class="outline-text-2" id="text-orgheadline17">
+</div><div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">emacs</h3>
+<div class="outline-text-3" id="text-orgheadline10">
 </div><div id="outline-container-orgheadline1" class="outline-4">
 <h4 id="orgheadline1">my installed package</h4>
 <div class="outline-text-4" id="text-orgheadline1">
@@ -234,12 +236,70 @@ for the record when i need to reinstall emacs
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-4">
-<h4 id="orgheadline6">org-mode</h4>
-<div class="outline-text-4" id="text-orgheadline6">
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9">org-mode</h4>
+<div class="outline-text-4" id="text-orgheadline9">
 </div><div id="outline-container-orgheadline2" class="outline-5">
-<h5 id="orgheadline2">insert BEGIN block: easy template</h5>
+<h5 id="orgheadline2">local variables block</h5>
 <div class="outline-text-5" id="text-orgheadline2">
+<ul class="org-ul">
+<li><p>
+init in-buffer variables:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #73d216;"># Local Variables&#58;</span>
+<span style="color: #73d216;"># eval: (setq-local aabbcc t)</span>
+<span style="color: #73d216;"># End:</span>
+</pre>
+</div>
+<p>
+this block need putting at eof, within 3000 chars.
+</p></li>
+<li>m-x revert-buffer to reload modifications</li>
+<li>this block will be evaluated on loading</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline3" class="outline-5">
+<h5 id="orgheadline3">sub/super scripts</h5>
+<div class="outline-text-5" id="text-orgheadline3">
+<ul class="org-ul">
+<li>'^' "_" are used to indicate super- and subscripts.</li>
+<li>by default the following chars will be treated as sub/superscripts: <br  />
+<b>NCURSES_NO_UTF8_ACS</b> will be converted to <b>NCURSES<sub>NO_UTF8_ACS</sub></b><br  />
+this is sometimes annoying.</li>
+<li><p>
+to prevent this, add these variables:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">(setq-local org-use-sub-superscripts '{}) <span style="color: #73d216;">;sub/superscripts must be wrapped with {}</span>
+(setq-local org-export-with-sub-superscripts '{}) <span style="color: #73d216;">; so are the export scripts</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline4" class="outline-5">
+<h5 id="orgheadline4">line break export</h5>
+<div class="outline-text-5" id="text-orgheadline4">
+<ul class="org-ul">
+<li><p>
+simply appent "\\" to end of line:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-org">- type "&lt;s" then &lt;tab&gt; to insert a source block. \\
+  usually a c-g is required to quit company auto completion.
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-5">
+<h5 id="orgheadline5">insert BEGIN block: easy template</h5>
+<div class="outline-text-5" id="text-orgheadline5">
 <ul class="org-ul">
 <li>type "&lt;s" then &lt;tab&gt; to insert a source block. <br  />
 usually a c-g is required to quit company auto completion.</li>
@@ -247,9 +307,9 @@ usually a c-g is required to quit company auto completion.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline3" class="outline-5">
-<h5 id="orgheadline3">customize source block style</h5>
-<div class="outline-text-5" id="text-orgheadline3">
+<div id="outline-container-orgheadline6" class="outline-5">
+<h5 id="orgheadline6">customize source block style</h5>
+<div class="outline-text-5" id="text-orgheadline6">
 <p>
 create a css for src:
 </p>
@@ -298,9 +358,9 @@ add HTML head to org file
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline4" class="outline-5">
-<h5 id="orgheadline4">link to external org file headline</h5>
-<div class="outline-text-5" id="text-orgheadline4">
+<div id="outline-container-orgheadline7" class="outline-5">
+<h5 id="orgheadline7">link to external org file headline</h5>
+<div class="outline-text-5" id="text-orgheadline7">
 <ul class="org-ul">
 <li>the whole org project must be exported: c-c c-e P x</li>
 <li><p>
@@ -318,9 +378,9 @@ headline name should be exact headline name in name.org
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline5" class="outline-5">
-<h5 id="orgheadline5">eval source block and export</h5>
-<div class="outline-text-5" id="text-orgheadline5">
+<div id="outline-container-orgheadline8" class="outline-5">
+<h5 id="orgheadline8">eval source block and export</h5>
+<div class="outline-text-5" id="text-orgheadline8">
 <ul class="org-ul">
 <li><p>
 make a source block, specifying source and result type
@@ -387,15 +447,15 @@ or set to header-args
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13">Web Site</h3>
-<div class="outline-text-3" id="text-orgheadline13">
-</div><div id="outline-container-orgheadline10" class="outline-4">
-<h4 id="orgheadline10">fliar.github.io</h4>
-<div class="outline-text-4" id="text-orgheadline10">
-</div><div id="outline-container-orgheadline8" class="outline-5">
-<h5 id="orgheadline8">read the org css fine tune</h5>
-<div class="outline-text-5" id="text-orgheadline8">
+<div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16">Web Site</h3>
+<div class="outline-text-3" id="text-orgheadline16">
+</div><div id="outline-container-orgheadline13" class="outline-4">
+<h4 id="orgheadline13">fliar.github.io</h4>
+<div class="outline-text-4" id="text-orgheadline13">
+</div><div id="outline-container-orgheadline11" class="outline-5">
+<h5 id="orgheadline11">read the org css fine tune</h5>
+<div class="outline-text-5" id="text-orgheadline11">
 <p>
 the mobile view of read the org looks badly like this:
 </p>
@@ -433,9 +493,9 @@ not very well but works:
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-5">
-<h5 id="orgheadline9">This web site does not supply ownership informatio</h5>
-<div class="outline-text-5" id="text-orgheadline9">
+<div id="outline-container-orgheadline12" class="outline-5">
+<h5 id="orgheadline12">This web site does not supply ownership informatio</h5>
+<div class="outline-text-5" id="text-orgheadline12">
 <p>
 outsourcing css caused this issue, simply move css to github solved this problem
 </p>
@@ -448,12 +508,12 @@ outsourcing css caused this issue, simply move css to github solved this problem
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline12" class="outline-4">
-<h4 id="orgheadline12">firebase</h4>
-<div class="outline-text-4" id="text-orgheadline12">
-</div><div id="outline-container-orgheadline11" class="outline-5">
-<h5 id="orgheadline11">RESTful API basic:get data</h5>
-<div class="outline-text-5" id="text-orgheadline11">
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15">firebase</h4>
+<div class="outline-text-4" id="text-orgheadline15">
+</div><div id="outline-container-orgheadline14" class="outline-5">
+<h5 id="orgheadline14">RESTful API basic:get data</h5>
+<div class="outline-text-5" id="text-orgheadline14">
 <ul class="org-ul">
 <li><p>
 simply using curl, add .json to the url address:
@@ -510,18 +570,18 @@ your data will show as well
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline25" class="outline-2">
-<h2 id="orgheadline25">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline25">
-</div><div id="outline-container-orgheadline17" class="outline-3">
-<h3 id="orgheadline17">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline17">
-</div><div id="outline-container-orgheadline16" class="outline-4">
-<h4 id="orgheadline16">iftop</h4>
-<div class="outline-text-4" id="text-orgheadline16">
-</div><div id="outline-container-orgheadline15" class="outline-5">
-<h5 id="orgheadline15">display issue</h5>
-<div class="outline-text-5" id="text-orgheadline15">
+<div id="outline-container-orgheadline30" class="outline-2">
+<h2 id="orgheadline30">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline30">
+</div><div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline22">
+</div><div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19">iftop</h4>
+<div class="outline-text-4" id="text-orgheadline19">
+</div><div id="outline-container-orgheadline18" class="outline-5">
+<h5 id="orgheadline18">display issue</h5>
+<div class="outline-text-5" id="text-orgheadline18">
 <p>
 iftop works well under lxterminal like this:
 </p>
@@ -541,16 +601,38 @@ to solve this, add param before launching iftop
 </div>
 </div>
 </div>
+<div id="outline-container-orgheadline21" class="outline-4">
+<h4 id="orgheadline21">bash</h4>
+<div class="outline-text-4" id="text-orgheadline21">
+</div><div id="outline-container-orgheadline20" class="outline-5">
+<h5 id="orgheadline20">aliased variable not work in sudo command</h5>
+<div class="outline-text-5" id="text-orgheadline20">
+<p>
+assuming 'iftop' is aliased to be 'NCURSES_NO_UTF8_ACS=1 iftop' to avoid <a href="notes.html#orgheadline18">display issue</a> <br  />
+this will not work using 'sudo iftop', but 'sudo NCURSES_NO_UTF8_ACS=1 iftop' works. <br  />
+to fix this, add an alias for 'sudo':
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #e090d7;">alias</span> <span style="color: #fcaf3e;">sudo</span>=<span style="color: #e9b96e;">'\sudo '</span>
+</pre>
 </div>
-<div id="outline-container-orgheadline24" class="outline-3">
-<h3 id="orgheadline24">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline24">
-</div><div id="outline-container-orgheadline23" class="outline-4">
-<h4 id="orgheadline23">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgheadline23">
-</div><div id="outline-container-orgheadline18" class="outline-5">
-<h5 id="orgheadline18">shell config: .bashrc</h5>
-<div class="outline-text-5" id="text-orgheadline18">
+<p>
+note that there's no space in the equation, the backslash prevents rescursive 'sudo' alias.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline29" class="outline-3">
+<h3 id="orgheadline29">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline29">
+</div><div id="outline-container-orgheadline28" class="outline-4">
+<h4 id="orgheadline28">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgheadline28">
+</div><div id="outline-container-orgheadline23" class="outline-5">
+<h5 id="orgheadline23">shell config: .bashrc</h5>
+<div class="outline-text-5" id="text-orgheadline23">
 <ul class="org-ul">
 <li><p>
 aliases(or put in .bashaliases):
@@ -571,9 +653,9 @@ terminal colors:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline19" class="outline-5">
-<h5 id="orgheadline19">global config: /etc/profile</h5>
-<div class="outline-text-5" id="text-orgheadline19">
+<div id="outline-container-orgheadline24" class="outline-5">
+<h5 id="orgheadline24">global config: /etc/profile</h5>
+<div class="outline-text-5" id="text-orgheadline24">
 <ul class="org-ul">
 <li><p>
 path:
@@ -586,17 +668,17 @@ path:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline21" class="outline-5">
-<h5 id="orgheadline21">auto run: /etc/rc.local</h5>
-<div class="outline-text-5" id="text-orgheadline21">
+<div id="outline-container-orgheadline26" class="outline-5">
+<h5 id="orgheadline26">auto run: /etc/rc.local</h5>
+<div class="outline-text-5" id="text-orgheadline26">
 <ul class="org-ul">
-<li><a href="#orgheadline20">auto run on startup</a></li>
+<li><a href="#orgheadline25">auto run on startup</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline22" class="outline-5">
-<h5 id="orgheadline22">show version</h5>
-<div class="outline-text-5" id="text-orgheadline22">
+<div id="outline-container-orgheadline27" class="outline-5">
+<h5 id="orgheadline27">show version</h5>
+<div class="outline-text-5" id="text-orgheadline27">
 <div class="org-src-container">
 
 <pre class="src src-sh">lsb_release -a
@@ -614,9 +696,9 @@ Codename:  xenial
 </div>
 </div>
 
-<div id="outline-container-orgheadline20" class="outline-5">
-<h5 id="orgheadline20">auto run on startup</h5>
-<div class="outline-text-5" id="text-orgheadline20">
+<div id="outline-container-orgheadline25" class="outline-5">
+<h5 id="orgheadline25">auto run on startup</h5>
+<div class="outline-text-5" id="text-orgheadline25">
 <ul class="org-ul">
 <li>edit /etc/rc.local, add command to run on startup:</li>
 </ul>
@@ -634,18 +716,18 @@ Codename:  xenial
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline29" class="outline-2">
-<h2 id="orgheadline29">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline29">
-</div><div id="outline-container-orgheadline28" class="outline-3">
-<h3 id="orgheadline28">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline28">
-</div><div id="outline-container-orgheadline27" class="outline-4">
-<h4 id="orgheadline27">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline27">
-</div><div id="outline-container-orgheadline26" class="outline-5">
-<h5 id="orgheadline26">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline26">
+<div id="outline-container-orgheadline34" class="outline-2">
+<h2 id="orgheadline34">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline34">
+</div><div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline33">
+</div><div id="outline-container-orgheadline32" class="outline-4">
+<h4 id="orgheadline32">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline32">
+</div><div id="outline-container-orgheadline31" class="outline-5">
+<h5 id="orgheadline31">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline31">
 <p>
 nested if is not allowed in ahk script:     
 </p>

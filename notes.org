@@ -5,6 +5,7 @@
 #+OPTIONS: H:5 num:nil toc:3
 #+PROPERTY: header-args+ :eval no-export
 #+PROPERTY: header-args+ :exports both
+
 * Cross Platform
 ** emacs
 *** my installed package
@@ -31,6 +32,32 @@
 	| swiper       | c?                                     |
 
 *** org-mode
+**** local variables block
+	 - init in-buffer variables:
+	   #+BEGIN_SRC org
+	   # Local Variables:
+	   # eval: (setq-local aabbcc t)
+	   # End:
+	   #+END_SRC
+	   this block need putting at eof, within 3000 chars.
+	 - m-x revert-buffer to reload modifications
+	 - this block will be evaluated on loading
+**** sub/super scripts
+	 - '^' "_" are used to indicate super- and subscripts.
+	 - by default the following chars will be treated as sub/superscripts: \\
+	   *NCURSES_NO_UTF8_ACS* will be converted to *NCURSES_{NO_UTF8_ACS}*\\
+	   this is sometimes annoying.
+	 - to prevent this, add these variables:
+	   #+BEGIN_SRC lisp
+	   (setq-local org-use-sub-superscripts '{}) ;sub/superscripts must be wrapped with {}
+	   (setq-local org-export-with-sub-superscripts '{}) ; so are the export scripts
+	   #+END_SRC
+**** line break export
+	 - simply appent "\\" to end of line:
+	   #+BEGIN_SRC org
+	   - type "<s" then <tab> to insert a source block. \\
+	     usually a c-g is required to quit company auto completion.
+	   #+END_SRC
 **** insert BEGIN block: easy template
 	 - type "<s" then <tab> to insert a source block. \\
 	   usually a c-g is required to quit company auto completion.
@@ -198,6 +225,15 @@
 	 #+BEGIN_SRC bash
 	 sudo NCURSES_NO_UTF8_ACS=1 iftop
 	 #+END_SRC
+*** bash
+**** aliased variable not work in sudo command
+	 assuming 'iftop' is aliased to be 'NCURSES_NO_UTF8_ACS=1 iftop' to avoid [[file:notes.org::* display issue][display issue]] \\
+	 this will not work using 'sudo iftop', but 'sudo NCURSES_NO_UTF8_ACS=1 iftop' works. \\
+	 to fix this, add an alias for 'sudo':
+	 #+BEGIN_SRC sh
+	 alias sudo='\sudo '
+	 #+END_SRC
+	 note that there's no space in the equation, the backslash prevents rescursive 'sudo' alias.
 ** Distributions
 *** Ubuntu
 **** shell config: .bashrc
@@ -266,3 +302,6 @@
 	 	fb(b)
 	 }
 	 #+END_SRC
+
+# Local Variables:
+# End:

@@ -8,7 +8,11 @@
 ** May
 *** <2016-05-27 Fri>
 **** [[file:notes.org::* shell config: .bashrc][ubuntu config files]]											  :linux:
-**** [[file:notes.org::* insert BEGIN block: easy template][insert source block with easy template]]							  :emacs:
+**** [[file:notes.org::* insert BEGIN block: easy template][org-mode:insert source block with easy template]] 				  :emacs:
+**** [[file:notes.org::* line break export][org-mode:line break export]]										  :emacs:
+**** [[file:notes.org::* aliased variable not work in sudo command][bash: aliased variable not work in sudo command]]				  :linux:
+**** [[file:notes.org::* sub/super scripts][org-mode:sub/super scripts]]										  :emacs:
+**** [[file:notes.org::* local variables block][org-mode:local variables block]]									  :emacs:
 *** <2016-05-26 Thu>
 **** [[file:notes.org::* eval source block and export][babel: eval source block and export]]							  :emacs:
 **** [[file:notes.org::* read the org css fine tune][read the org css fine tune]]											:css:
