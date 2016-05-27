@@ -215,7 +215,7 @@
 	   export PATH=$PATH:/usr/local/go/bin
 	   #+END_SRC
 **** auto run: /etc/rc.local
-	 [[file:notes.org::*auto run on startup][- auto run on startup]]
+	 - [[*auto run on startup][auto run on startup]]
 **** show version
 	 #+BEGIN_SRC sh :results code 
 	 lsb_release -a
