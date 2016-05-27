@@ -31,6 +31,10 @@
 	| swiper       | c?                                     |
 
 *** org-mode
+**** insert BEGIN block: easy template
+	 - type "<s" then <tab> to insert a source block. \\
+	   usually a c-g is required to quit company auto completion.
+	 - for more easy template: [[http://orgmode.org/manual/Easy-Templates.html][click here]]
 **** customize source block style
 	 create a css for src:
 	 #+BEGIN_SRC css
@@ -139,7 +143,7 @@
 	 #+ATTR_HTML: :width 50% :height 50%
 	 [[./pic/2016/rto_g.jpg]]
 
-**** This web site does not supply ownership information.
+**** This web site does not supply ownership informatio
 	 outsourcing css caused this issue, simply move css to github solved this problem
 	 #+BEGIN_SRC org
 	 ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/htmlize.css"/>
@@ -196,6 +200,22 @@
 	 #+END_SRC
 ** Distributions
 *** Ubuntu
+**** shell config: .bashrc
+	 - aliases(or put in .bashaliases):
+	   #+BEGIN_SRC sh
+	   alias iftop="NCURSES_NO_UTF8_ACS=1 iftop"
+	   #+END_SRC
+	 - terminal colors:
+	   #+BEGIN_SRC sh
+	   export TERM=xterm-256color
+	   #+END_SRC
+**** global config: /etc/profile
+	 - path:
+	   #+BEGIN_SRC sh
+	   export PATH=$PATH:/usr/local/go/bin
+	   #+END_SRC
+**** auto run: /etc/rc.local
+	 [[file:notes.org::*auto run on startup][- auto run on startup]]
 **** show version
 	 #+BEGIN_SRC sh :results code 
 	 lsb_release -a
