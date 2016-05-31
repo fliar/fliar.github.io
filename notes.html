@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-05-27 Fri 17:18 -->
+<!-- 2016-05-31 Tue 16:48 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -87,7 +87,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline30">Linux</a>
+<li><a href="#orgheadline33">Linux</a>
 <ul>
 <li><a href="#orgheadline22">Tools</a>
 <ul>
@@ -95,18 +95,19 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline21">bash</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline29">Distributions</a>
+<li><a href="#orgheadline32">Distributions</a>
 <ul>
 <li><a href="#orgheadline28">Ubuntu</a></li>
+<li><a href="#orgheadline31">CentOS</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline34">Windows</a>
+<li><a href="#orgheadline37">Windows</a>
 <ul>
-<li><a href="#orgheadline33">Tools</a>
+<li><a href="#orgheadline36">Tools</a>
 <ul>
-<li><a href="#orgheadline32">Auto Hot Key</a></li>
+<li><a href="#orgheadline35">Auto Hot Key</a></li>
 </ul>
 </li>
 </ul>
@@ -570,9 +571,9 @@ your data will show as well
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline30" class="outline-2">
-<h2 id="orgheadline30">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline30">
+<div id="outline-container-orgheadline33" class="outline-2">
+<h2 id="orgheadline33">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline33">
 </div><div id="outline-container-orgheadline22" class="outline-3">
 <h3 id="orgheadline22">Tools</h3>
 <div class="outline-text-3" id="text-orgheadline22">
@@ -624,9 +625,9 @@ note that there's no space in the equation, the backslash prevents rescursive 's
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline29" class="outline-3">
-<h3 id="orgheadline29">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline29">
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline32">
 </div><div id="outline-container-orgheadline28" class="outline-4">
 <h4 id="orgheadline28">Ubuntu</h4>
 <div class="outline-text-4" id="text-orgheadline28">
@@ -714,20 +715,166 @@ Codename:  xenial
 </div>
 </div>
 </div>
+<div id="outline-container-orgheadline31" class="outline-4">
+<h4 id="orgheadline31">CentOS</h4>
+<div class="outline-text-4" id="text-orgheadline31">
+</div><div id="outline-container-orgheadline29" class="outline-5">
+<h5 id="orgheadline29">distcc installation on centos 6.7</h5>
+<div class="outline-text-5" id="text-orgheadline29">
+<ul class="org-ul">
+<li><p>
+install prerequisities
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">yum install automake
+yum install gcc
+yum install gcc-c++
+yum install python-devel
+adduser distcc
+</pre>
+</div></li>
+<li><p>
+install
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">chmod +x autogen.sh
+./autogen.sh
+./configure
+make
+make install
+</pre>
+</div>
+<p>
+check prerequisities if failure encountered
+</p></li>
+<li>slave:
+<ul class="org-ul">
+<li><p>
+launch daemon
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">distccd --daemon -a 192.168.1.0/8 -j 2 --user distcc
+<span style="color: #73d216;"># </span><span style="color: #73d216;">max job 2, default user is distcc</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">allow 192.168.1.x to use this slave</span>
+</pre>
+</div></li>
+</ul></li>
+
+<li>master:
+<ul class="org-ul">
+<li><p>
+add hosts to config
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">192.168.1.88/8 <span style="color: #73d216;"># </span><span style="color: #73d216;">max job 8, 4 by default</span>
+192.168.1.22/1
+192.168.1.23/1
+192.168.1.21/1
+</pre>
+</div></li>
+
+<li><p>
+set variables(bashrc)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #73d216;"># </span><span style="color: #73d216;">distcc</span>
+<span style="color: #fcaf3e;">DISTCC_VERBOSE</span>=0
+<span style="color: #fcaf3e;">DISTCC_LOG</span>=<span style="color: #e9b96e;">"/home/util/distcc.log"</span>
+<span style="color: #e090d7;">export</span> DISTCC_VERBOSE DISTCC_LOG
+</pre>
+</div></li>
+<li><p>
+set CXX/CC to "distcc"
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">env = Environment( 
+   ENV = os.environ,
+   CPPPATH = listinc, LIBPATH = <span style="color: #e9b96e;">'/usr/lib'</span>, CCFLAGS = releasecflags, <span style="color: #fcaf3e;">CXX</span>=<span style="color: #e9b96e;">'distcc g++'</span>,)
+</pre>
+</div></li>
+<li><p>
+monitor building status
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">distccmon-text 2 <span style="color: #73d216;"># </span><span style="color: #73d216;">update per 2 second</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-orgheadline34" class="outline-2">
-<h2 id="orgheadline34">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline34">
-</div><div id="outline-container-orgheadline33" class="outline-3">
-<h3 id="orgheadline33">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline33">
-</div><div id="outline-container-orgheadline32" class="outline-4">
-<h4 id="orgheadline32">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline32">
-</div><div id="outline-container-orgheadline31" class="outline-5">
-<h5 id="orgheadline31">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline31">
+
+<div id="outline-container-orgheadline30" class="outline-5">
+<h5 id="orgheadline30">ntp for time update</h5>
+<div class="outline-text-5" id="text-orgheadline30">
+<ul class="org-ul">
+<li><p>
+install ntp
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">yum install ntp
+</pre>
+</div></li>
+<li>setup config
+<ul class="org-ul">
+<li>add server to config</li>
+<li><p>
+restric source
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">restrict 2.cn.pool.ntp.org
+restrict 0.asia.pool.ntp.org
+restrict 3.asia.pool.ntp.org
+
+server 2.cn.pool.ntp.org prefer
+server 0.asia.pool.ntp.org
+server 3.asia.pool.ntp.org
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+start ntp daemon
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">/etc/init.d/ntpd start
+</pre>
+</div></li>
+<li><p>
+check ntp status
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">ntpstat
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline37" class="outline-2">
+<h2 id="orgheadline37">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline37">
+</div><div id="outline-container-orgheadline36" class="outline-3">
+<h3 id="orgheadline36">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline36">
+</div><div id="outline-container-orgheadline35" class="outline-4">
+<h4 id="orgheadline35">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline35">
+</div><div id="outline-container-orgheadline34" class="outline-5">
+<h5 id="orgheadline34">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline34">
 <p>
 nested if is not allowed in ahk script:     
 </p>

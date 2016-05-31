@@ -272,6 +272,85 @@
 	 exit 0 # last line of rc.local
 	 #+END_SRC
 	 - note that rc.local should end with a value(exit 0)
+*** CentOS
+**** distcc installation on centos 6.7
+	 - install prerequisities
+	   #+BEGIN_SRC sh
+	   yum install automake
+	   yum install gcc
+	   yum install gcc-c++
+	   yum install python-devel
+	   adduser distcc
+	   #+END_SRC
+	 - install
+	   #+BEGIN_SRC sh
+	   chmod +x autogen.sh
+	   ./autogen.sh
+	   ./configure
+	   make
+	   make install
+	   #+END_SRC
+	   check prerequisities if failure encountered
+	 - slave:
+	   - launch daemon
+		 #+BEGIN_SRC sh
+		 distccd --daemon -a 192.168.1.0/8 -j 2 --user distcc
+		 # max job 2, default user is distcc
+		 # allow 192.168.1.x to use this slave
+		 #+END_SRC
+		 
+	 - master:
+	   - add hosts to config
+		 #+BEGIN_SRC sh
+		 192.168.1.88/8 # max job 8, 4 by default
+		 192.168.1.22/1
+		 192.168.1.23/1
+		 192.168.1.21/1
+		 #+END_SRC
+
+	   - set variables(bashrc)
+		 #+BEGIN_SRC sh
+		 # distcc
+		 DISTCC_VERBOSE=0
+		 DISTCC_LOG="/home/util/distcc.log"
+		 export DISTCC_VERBOSE DISTCC_LOG
+		 #+END_SRC
+	   - set CXX/CC to "distcc"
+		 #+BEGIN_SRC sh
+		 env = Environment( 
+		 	ENV = os.environ,
+			CPPPATH = listinc, LIBPATH = '/usr/lib', CCFLAGS = releasecflags, CXX='distcc g++',)
+		 #+END_SRC
+	   - monitor building status
+		 #+BEGIN_SRC sh
+		 distccmon-text 2 # update per 2 second
+		 #+END_SRC
+	   
+**** ntp for time update
+	 - install ntp
+	   #+BEGIN_SRC sh
+	   yum install ntp
+	   #+END_SRC
+	 - setup config
+	   - add server to config
+	   - restric source
+		 #+BEGIN_SRC sh
+		 restrict 2.cn.pool.ntp.org
+		 restrict 0.asia.pool.ntp.org
+		 restrict 3.asia.pool.ntp.org
+
+		 server 2.cn.pool.ntp.org prefer
+		 server 0.asia.pool.ntp.org
+		 server 3.asia.pool.ntp.org
+		 #+END_SRC
+	 - start ntp daemon
+	   #+BEGIN_SRC sh
+	   /etc/init.d/ntpd start
+	   #+END_SRC
+	 - check ntp status
+	   #+BEGIN_SRC sh
+	   ntpstat
+	   #+END_SRC
 * Windows
 ** Tools
 *** Auto Hot Key

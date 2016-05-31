@@ -6,6 +6,9 @@
 
 * 2016
 ** May
+*** <2016-05-31 Tue>
+**** [[file:notes.org::* ntp for time update][sync time using ntp]]											  :linux:
+**** [[file:notes.org::* distcc installation on centos 6.7][distcc installation on centos 6.7]]								  :linux:
 *** <2016-05-27 Fri>
 **** [[file:notes.org::* shell config: .bashrc][ubuntu config files]]											  :linux:
 **** [[file:notes.org::* insert BEGIN block: easy template][org-mode:insert source block with easy template]] 				  :emacs:
