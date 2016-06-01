@@ -146,6 +146,19 @@
 	   #+BEGIN_SRC org
 	   ,#+PROPERTY: header-args+ :exports both
 	   #+END_SRC
+*** setting an array variable
+	(quote (a b c))
+	#+BEGIN_SRC lisp
+	(add-hook 'csv-mode-hook
+		  (lambda()
+			(setq-local csv-separators (quote ("," "	"))) ;; comma and tab as separators
+			))
+	#+END_SRC
+*** disable welcome screen
+	#+BEGIN_SRC lisp
+	(setq inhibit-splash-screen t)
+	(setq inhibit-startup-message t)
+	#+END_SRC
 ** Web Site
 *** fliar.github.io
 **** read the org css fine tune

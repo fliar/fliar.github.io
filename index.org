@@ -5,6 +5,10 @@
 #+OPTIONS: H:4 num:nil toc:3
 
 * 2016
+** June
+*** <2016-06-01 Wed>
+**** [[file:notes.org::* setting an array variable][setting an array variable]]										  :emacs:
+**** [[file:notes.org::* disable welcome screen][disable welcome screen]]											  :emacs:
 ** May
 *** <2016-05-31 Tue>
 **** [[file:notes.org::* ntp for time update][sync time using ntp]]											  :linux:
