@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-06-01 Wed 15:53 -->
+<!-- 2016-06-01 Wed 16:23 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -89,7 +89,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline35">Linux</a>
+<li><a href="#orgheadline36">Linux</a>
 <ul>
 <li><a href="#orgheadline24">Tools</a>
 <ul>
@@ -97,19 +97,20 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline23">bash</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline34">Distributions</a>
+<li><a href="#orgheadline35">Distributions</a>
 <ul>
-<li><a href="#orgheadline30">Ubuntu</a></li>
-<li><a href="#orgheadline33">CentOS</a></li>
+<li><a href="#orgheadline31">Ubuntu</a></li>
+<li><a href="#orgheadline34">CentOS</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline39">Windows</a>
+<li><a href="#orgheadline42">Windows</a>
 <ul>
-<li><a href="#orgheadline38">Tools</a>
+<li><a href="#orgheadline41">Tools</a>
 <ul>
-<li><a href="#orgheadline37">Auto Hot Key</a></li>
+<li><a href="#orgheadline38">Auto Hot Key</a></li>
+<li><a href="#orgheadline40">cygwin</a></li>
 </ul>
 </li>
 </ul>
@@ -600,9 +601,9 @@ your data will show as well
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline35" class="outline-2">
-<h2 id="orgheadline35">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline35">
+<div id="outline-container-orgheadline36" class="outline-2">
+<h2 id="orgheadline36">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline36">
 </div><div id="outline-container-orgheadline24" class="outline-3">
 <h3 id="orgheadline24">Tools</h3>
 <div class="outline-text-3" id="text-orgheadline24">
@@ -638,7 +639,7 @@ to solve this, add param before launching iftop
 <h5 id="orgheadline22">aliased variable not work in sudo command</h5>
 <div class="outline-text-5" id="text-orgheadline22">
 <p>
-assuming 'iftop' is aliased to be 'NCURSES<sub>NO</sub><sub>UTF8</sub><sub>ACS</sub>=1 iftop' to avoid <a href="notes.html#orgheadline18">display issue</a> <br  />
+assuming 'iftop' is aliased to be 'NCURSES<sub>NO</sub><sub>UTF8</sub><sub>ACS</sub>=1 iftop' to avoid <a href="notes.html#orgheadline20">display issue</a> <br  />
 this will not work using 'sudo iftop', but 'sudo NCURSES<sub>NO</sub><sub>UTF8</sub><sub>ACS</sub>=1 iftop' works. <br  />
 to fix this, add an alias for 'sudo':
 </p>
@@ -654,12 +655,12 @@ note that there's no space in the equation, the backslash prevents rescursive 's
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline34" class="outline-3">
-<h3 id="orgheadline34">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline34">
-</div><div id="outline-container-orgheadline30" class="outline-4">
-<h4 id="orgheadline30">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgheadline30">
+<div id="outline-container-orgheadline35" class="outline-3">
+<h3 id="orgheadline35">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline35">
+</div><div id="outline-container-orgheadline31" class="outline-4">
+<h4 id="orgheadline31">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgheadline31">
 </div><div id="outline-container-orgheadline25" class="outline-5">
 <h5 id="orgheadline25">shell config: .bashrc</h5>
 <div class="outline-text-5" id="text-orgheadline25">
@@ -743,13 +744,30 @@ Codename:  xenial
 </ul>
 </div>
 </div>
+<div id="outline-container-orgheadline30" class="outline-5">
+<h5 id="orgheadline30">default PS1 location (ubt)</h5>
+<div class="outline-text-5" id="text-orgheadline30">
+<p>
+<b>~/.bashrc</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #b4fa70;">if</span> [ <span style="color: #e9b96e;">"$color_prompt"</span> = yes ]; <span style="color: #b4fa70;">then</span>
+   <span style="color: #fcaf3e;">PS1</span>=<span style="color: #e9b96e;">'${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '</span>
+<span style="color: #b4fa70;">else</span>
+   <span style="color: #fcaf3e;">PS1</span>=<span style="color: #e9b96e;">'${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '</span>
+<span style="color: #b4fa70;">fi</span>
+</pre>
 </div>
-<div id="outline-container-orgheadline33" class="outline-4">
-<h4 id="orgheadline33">CentOS</h4>
-<div class="outline-text-4" id="text-orgheadline33">
-</div><div id="outline-container-orgheadline31" class="outline-5">
-<h5 id="orgheadline31">distcc installation on centos 6.7</h5>
-<div class="outline-text-5" id="text-orgheadline31">
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline34" class="outline-4">
+<h4 id="orgheadline34">CentOS</h4>
+<div class="outline-text-4" id="text-orgheadline34">
+</div><div id="outline-container-orgheadline32" class="outline-5">
+<h5 id="orgheadline32">distcc installation on centos 6.7</h5>
+<div class="outline-text-5" id="text-orgheadline32">
 <ul class="org-ul">
 <li><p>
 install prerequisities
@@ -840,9 +858,9 @@ monitor building status
 </div>
 </div>
 
-<div id="outline-container-orgheadline32" class="outline-5">
-<h5 id="orgheadline32">ntp for time update</h5>
-<div class="outline-text-5" id="text-orgheadline32">
+<div id="outline-container-orgheadline33" class="outline-5">
+<h5 id="orgheadline33">ntp for time update</h5>
+<div class="outline-text-5" id="text-orgheadline33">
 <ul class="org-ul">
 <li><p>
 install ntp
@@ -892,18 +910,18 @@ check ntp status
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline39" class="outline-2">
-<h2 id="orgheadline39">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline39">
-</div><div id="outline-container-orgheadline38" class="outline-3">
-<h3 id="orgheadline38">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline38">
-</div><div id="outline-container-orgheadline37" class="outline-4">
-<h4 id="orgheadline37">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline37">
-</div><div id="outline-container-orgheadline36" class="outline-5">
-<h5 id="orgheadline36">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline36">
+<div id="outline-container-orgheadline42" class="outline-2">
+<h2 id="orgheadline42">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline42">
+</div><div id="outline-container-orgheadline41" class="outline-3">
+<h3 id="orgheadline41">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline41">
+</div><div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline38">
+</div><div id="outline-container-orgheadline37" class="outline-5">
+<h5 id="orgheadline37">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline37">
 <p>
 nested if is not allowed in ahk script:     
 </p>
@@ -936,6 +954,25 @@ you can wrap it to another function:
 {
    fb(b)
 }
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40">cygwin</h4>
+<div class="outline-text-4" id="text-orgheadline40">
+</div><div id="outline-container-orgheadline39" class="outline-5">
+<h5 id="orgheadline39">default PS1 location</h5>
+<div class="outline-text-5" id="text-orgheadline39">
+<p>
+<b>/etc/bash.bashrc</b>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #73d216;"># </span><span style="color: #73d216;">Set a default prompt of: user@host and current_directory</span>
+<span style="color: #fcaf3e;">PS1</span>=<span style="color: #e9b96e;">'\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '</span>
 </pre>
 </div>
 </div>

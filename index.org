@@ -9,6 +9,8 @@
 *** <2016-06-01 Wed>
 **** [[file:notes.org::* setting an array variable][setting an array variable]]										  :emacs:
 **** [[file:notes.org::* disable welcome screen][disable welcome screen]]											  :emacs:
+**** [[file:notes.org::* default PS1 location][default PS1 location]]											 :cygwin:
+**** [[file:notes.org::* default PS1 location (ubt)][default PS1 location]]											 :ubuntu:
 ** May
 *** <2016-05-31 Tue>
 **** [[file:notes.org::* ntp for time update][sync time using ntp]]											  :linux:

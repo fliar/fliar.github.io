@@ -285,6 +285,15 @@
 	 exit 0 # last line of rc.local
 	 #+END_SRC
 	 - note that rc.local should end with a value(exit 0)
+**** default PS1 location (ubt)
+	 *~/.bashrc*
+	 #+BEGIN_SRC sh
+	 if [ "$color_prompt" = yes ]; then
+     	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+	 else
+     	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
+	 fi
+	 #+END_SRC
 *** CentOS
 **** distcc installation on centos 6.7
 	 - install prerequisities
@@ -397,3 +406,10 @@
 
 # Local Variables:
 # End:
+*** cygwin
+**** default PS1 location
+	 */etc/bash.bashrc*
+	 #+BEGIN_SRC sh
+	 # Set a default prompt of: user@host and current_directory
+	 PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+	 #+END_SRC
