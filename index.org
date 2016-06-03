@@ -6,6 +6,8 @@
 
 * 2016
 ** June
+*** <2016-06-03 Fri>
+**** [[file:notes.org::* VirtualBox addon installation][debian: VirtualBox addon installation]]							  :linux:
 *** <2016-06-01 Wed>
 **** [[file:notes.org::* setting an array variable][setting an array variable]]										  :emacs:
 **** [[file:notes.org::* disable welcome screen][disable welcome screen]]											  :emacs:

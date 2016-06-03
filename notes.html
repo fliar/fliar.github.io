@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-06-01 Wed 16:23 -->
+<!-- 2016-06-03 Fri 17:19 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -89,7 +89,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline36">Linux</a>
+<li><a href="#orgheadline38">Linux</a>
 <ul>
 <li><a href="#orgheadline24">Tools</a>
 <ul>
@@ -97,20 +97,21 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline23">bash</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline35">Distributions</a>
+<li><a href="#orgheadline37">Distributions</a>
 <ul>
 <li><a href="#orgheadline31">Ubuntu</a></li>
-<li><a href="#orgheadline34">CentOS</a></li>
+<li><a href="#orgheadline33">Debian</a></li>
+<li><a href="#orgheadline36">CentOS</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline42">Windows</a>
+<li><a href="#orgheadline44">Windows</a>
 <ul>
-<li><a href="#orgheadline41">Tools</a>
+<li><a href="#orgheadline43">Tools</a>
 <ul>
-<li><a href="#orgheadline38">Auto Hot Key</a></li>
-<li><a href="#orgheadline40">cygwin</a></li>
+<li><a href="#orgheadline40">Auto Hot Key</a></li>
+<li><a href="#orgheadline42">cygwin</a></li>
 </ul>
 </li>
 </ul>
@@ -601,9 +602,9 @@ your data will show as well
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline36" class="outline-2">
-<h2 id="orgheadline36">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline36">
+<div id="outline-container-orgheadline38" class="outline-2">
+<h2 id="orgheadline38">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline38">
 </div><div id="outline-container-orgheadline24" class="outline-3">
 <h3 id="orgheadline24">Tools</h3>
 <div class="outline-text-3" id="text-orgheadline24">
@@ -655,9 +656,9 @@ note that there's no space in the equation, the backslash prevents rescursive 's
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline35" class="outline-3">
-<h3 id="orgheadline35">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline35">
+<div id="outline-container-orgheadline37" class="outline-3">
+<h3 id="orgheadline37">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline37">
 </div><div id="outline-container-orgheadline31" class="outline-4">
 <h4 id="orgheadline31">Ubuntu</h4>
 <div class="outline-text-4" id="text-orgheadline31">
@@ -762,12 +763,34 @@ Codename:  xenial
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline34" class="outline-4">
-<h4 id="orgheadline34">CentOS</h4>
-<div class="outline-text-4" id="text-orgheadline34">
+<div id="outline-container-orgheadline33" class="outline-4">
+<h4 id="orgheadline33">Debian</h4>
+<div class="outline-text-4" id="text-orgheadline33">
 </div><div id="outline-container-orgheadline32" class="outline-5">
-<h5 id="orgheadline32">distcc installation on centos 6.7</h5>
+<h5 id="orgheadline32">VirtualBox addon installation</h5>
 <div class="outline-text-5" id="text-orgheadline32">
+<ul class="org-ul">
+<li>use root or add your account to super user</li>
+<li>follow this shell</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install build-essential module-assistant
+<span style="color: #e090d7;">cd</span> /media/cdrom0
+sudo bash VBoxLinuxAdditions.run
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline36" class="outline-4">
+<h4 id="orgheadline36">CentOS</h4>
+<div class="outline-text-4" id="text-orgheadline36">
+</div><div id="outline-container-orgheadline34" class="outline-5">
+<h5 id="orgheadline34">distcc installation on centos 6.7</h5>
+<div class="outline-text-5" id="text-orgheadline34">
 <ul class="org-ul">
 <li><p>
 install prerequisities
@@ -779,6 +802,7 @@ yum install gcc
 yum install gcc-c++
 yum install python-devel
 adduser distcc
+iptables -F <span style="color: #73d216;"># </span><span style="color: #73d216;">Centos block all ports except 22</span>
 </pre>
 </div></li>
 <li><p>
@@ -858,9 +882,9 @@ monitor building status
 </div>
 </div>
 
-<div id="outline-container-orgheadline33" class="outline-5">
-<h5 id="orgheadline33">ntp for time update</h5>
-<div class="outline-text-5" id="text-orgheadline33">
+<div id="outline-container-orgheadline35" class="outline-5">
+<h5 id="orgheadline35">ntp for time update</h5>
+<div class="outline-text-5" id="text-orgheadline35">
 <ul class="org-ul">
 <li><p>
 install ntp
@@ -910,18 +934,18 @@ check ntp status
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline42" class="outline-2">
-<h2 id="orgheadline42">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline42">
-</div><div id="outline-container-orgheadline41" class="outline-3">
-<h3 id="orgheadline41">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline41">
-</div><div id="outline-container-orgheadline38" class="outline-4">
-<h4 id="orgheadline38">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline38">
-</div><div id="outline-container-orgheadline37" class="outline-5">
-<h5 id="orgheadline37">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline37">
+<div id="outline-container-orgheadline44" class="outline-2">
+<h2 id="orgheadline44">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline44">
+</div><div id="outline-container-orgheadline43" class="outline-3">
+<h3 id="orgheadline43">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline43">
+</div><div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline40">
+</div><div id="outline-container-orgheadline39" class="outline-5">
+<h5 id="orgheadline39">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline39">
 <p>
 nested if is not allowed in ahk script:     
 </p>
@@ -960,12 +984,12 @@ you can wrap it to another function:
 </div>
 </div>
 
-<div id="outline-container-orgheadline40" class="outline-4">
-<h4 id="orgheadline40">cygwin</h4>
-<div class="outline-text-4" id="text-orgheadline40">
-</div><div id="outline-container-orgheadline39" class="outline-5">
-<h5 id="orgheadline39">default PS1 location</h5>
-<div class="outline-text-5" id="text-orgheadline39">
+<div id="outline-container-orgheadline42" class="outline-4">
+<h4 id="orgheadline42">cygwin</h4>
+<div class="outline-text-4" id="text-orgheadline42">
+</div><div id="outline-container-orgheadline41" class="outline-5">
+<h5 id="orgheadline41">default PS1 location</h5>
+<div class="outline-text-5" id="text-orgheadline41">
 <p>
 <b>/etc/bash.bashrc</b>
 </p>
