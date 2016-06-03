@@ -298,13 +298,13 @@
 **** VirtualBox addon installation
 	 - use root or add your account to super user
 	 - follow this shell
-	 #+BEGIN_SRC sh
-	 sudo apt-get update
-	 sudo apt-get dist-upgrade
-	 sudo apt-get install build-essential module-assistant
-	 cd /media/cdrom0
-	 sudo bash VBoxLinuxAdditions.run
-	 #+END_SRC
+	   #+BEGIN_SRC sh
+	   sudo apt-get update
+	   sudo apt-get dist-upgrade
+	   sudo apt-get install build-essential module-assistant
+	   cd /media/cdrom0
+	   sudo bash VBoxLinuxAdditions.run
+	   #+END_SRC
 *** CentOS
 **** distcc installation on centos 6.7
 	 - install prerequisities
