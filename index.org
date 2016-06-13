@@ -6,6 +6,8 @@
 
 * 2016
 ** June
+*** <2016-06-13 Mon>
+**** [[file:notes.org::* remote desktop for vm][remote desktop]] 											 :virtualbox:
 *** <2016-06-03 Fri>
 **** [[file:notes.org::* VirtualBox addon installation][debian: VirtualBox addon installation]]							  :linux:
 *** <2016-06-01 Wed>

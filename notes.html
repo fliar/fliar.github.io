@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-06-03 Fri 17:19 -->
+<!-- 2016-06-13 Mon 16:37 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -71,7 +71,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline19">Cross Platform</a>
+<li><a href="#orgheadline21">Cross Platform</a>
 <ul>
 <li><a href="#orgheadline12">emacs</a>
 <ul>
@@ -87,31 +87,36 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline17">firebase</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#orgheadline38">Linux</a>
+<li><a href="#orgheadline20">VirtualBox</a>
 <ul>
-<li><a href="#orgheadline24">Tools</a>
-<ul>
-<li><a href="#orgheadline21">iftop</a></li>
-<li><a href="#orgheadline23">bash</a></li>
-</ul>
-</li>
-<li><a href="#orgheadline37">Distributions</a>
-<ul>
-<li><a href="#orgheadline31">Ubuntu</a></li>
-<li><a href="#orgheadline33">Debian</a></li>
-<li><a href="#orgheadline36">CentOS</a></li>
+<li><a href="#orgheadline19">remote desktop for vm</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline44">Windows</a>
+<li><a href="#orgheadline40">Linux</a>
 <ul>
-<li><a href="#orgheadline43">Tools</a>
+<li><a href="#orgheadline26">Tools</a>
 <ul>
-<li><a href="#orgheadline40">Auto Hot Key</a></li>
-<li><a href="#orgheadline42">cygwin</a></li>
+<li><a href="#orgheadline23">iftop</a></li>
+<li><a href="#orgheadline25">bash</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline39">Distributions</a>
+<ul>
+<li><a href="#orgheadline33">Ubuntu</a></li>
+<li><a href="#orgheadline35">Debian</a></li>
+<li><a href="#orgheadline38">CentOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline46">Windows</a>
+<ul>
+<li><a href="#orgheadline45">Tools</a>
+<ul>
+<li><a href="#orgheadline42">Auto Hot Key</a></li>
+<li><a href="#orgheadline44">cygwin</a></li>
 </ul>
 </li>
 </ul>
@@ -120,9 +125,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgheadline19" class="outline-2">
-<h2 id="orgheadline19">Cross Platform</h2>
-<div class="outline-text-2" id="text-orgheadline19">
+<div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="orgheadline21">Cross Platform</h2>
+<div class="outline-text-2" id="text-orgheadline21">
 </div><div id="outline-container-orgheadline12" class="outline-3">
 <h3 id="orgheadline12">emacs</h3>
 <div class="outline-text-3" id="text-orgheadline12">
@@ -272,7 +277,7 @@ this block need putting at eof, within 3000 chars.
 <ul class="org-ul">
 <li>'^' "_" are used to indicate super- and subscripts.</li>
 <li>by default the following chars will be treated as sub/superscripts: <br  />
-<b>NCURSES<sub>NO</sub><sub>UTF8</sub><sub>ACS</sub></b> will be converted to <b>NCURSES<sub>NO<sub>UTF8</sub><sub>ACS</sub></sub></b><br  />
+<b>NCURSES_NO_UTF8_ACS</b> will be converted to <b>NCURSES<sub>NO_UTF8_ACS</sub></b><br  />
 this is sometimes annoying.</li>
 <li><p>
 to prevent this, add these variables:
@@ -601,19 +606,34 @@ your data will show as well
 </div>
 </div>
 </div>
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20">VirtualBox</h3>
+<div class="outline-text-3" id="text-orgheadline20">
+</div><div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19">remote desktop for vm</h4>
+<div class="outline-text-4" id="text-orgheadline19">
+<ul class="org-ul">
+<li>install virtualbox addon</li>
+<li>enable vrdp by vm -&gt; setting -&gt; display -&gt; enable server</li>
+<li>specify a port number, verify method should be null</li>
+<li>on windows: use mstsc.exe to connect 127.0.0.1:PORT</li>
+</ul>
 </div>
-<div id="outline-container-orgheadline38" class="outline-2">
-<h2 id="orgheadline38">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline38">
-</div><div id="outline-container-orgheadline24" class="outline-3">
-<h3 id="orgheadline24">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline24">
-</div><div id="outline-container-orgheadline21" class="outline-4">
-<h4 id="orgheadline21">iftop</h4>
-<div class="outline-text-4" id="text-orgheadline21">
-</div><div id="outline-container-orgheadline20" class="outline-5">
-<h5 id="orgheadline20">display issue</h5>
-<div class="outline-text-5" id="text-orgheadline20">
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline40" class="outline-2">
+<h2 id="orgheadline40">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline40">
+</div><div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline26">
+</div><div id="outline-container-orgheadline23" class="outline-4">
+<h4 id="orgheadline23">iftop</h4>
+<div class="outline-text-4" id="text-orgheadline23">
+</div><div id="outline-container-orgheadline22" class="outline-5">
+<h5 id="orgheadline22">display issue</h5>
+<div class="outline-text-5" id="text-orgheadline22">
 <p>
 iftop works well under lxterminal like this:
 </p>
@@ -633,15 +653,15 @@ to solve this, add param before launching iftop
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline23" class="outline-4">
-<h4 id="orgheadline23">bash</h4>
-<div class="outline-text-4" id="text-orgheadline23">
-</div><div id="outline-container-orgheadline22" class="outline-5">
-<h5 id="orgheadline22">aliased variable not work in sudo command</h5>
-<div class="outline-text-5" id="text-orgheadline22">
+<div id="outline-container-orgheadline25" class="outline-4">
+<h4 id="orgheadline25">bash</h4>
+<div class="outline-text-4" id="text-orgheadline25">
+</div><div id="outline-container-orgheadline24" class="outline-5">
+<h5 id="orgheadline24">aliased variable not work in sudo command</h5>
+<div class="outline-text-5" id="text-orgheadline24">
 <p>
-assuming 'iftop' is aliased to be 'NCURSES<sub>NO</sub><sub>UTF8</sub><sub>ACS</sub>=1 iftop' to avoid <a href="notes.html#orgheadline20">display issue</a> <br  />
-this will not work using 'sudo iftop', but 'sudo NCURSES<sub>NO</sub><sub>UTF8</sub><sub>ACS</sub>=1 iftop' works. <br  />
+assuming 'iftop' is aliased to be 'NCURSES_NO_UTF8_ACS=1 iftop' to avoid <a href="notes.html#orgheadline20">display issue</a> <br  />
+this will not work using 'sudo iftop', but 'sudo NCURSES_NO_UTF8_ACS=1 iftop' works. <br  />
 to fix this, add an alias for 'sudo':
 </p>
 <div class="org-src-container">
@@ -656,15 +676,15 @@ note that there's no space in the equation, the backslash prevents rescursive 's
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline37" class="outline-3">
-<h3 id="orgheadline37">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline37">
-</div><div id="outline-container-orgheadline31" class="outline-4">
-<h4 id="orgheadline31">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgheadline31">
-</div><div id="outline-container-orgheadline25" class="outline-5">
-<h5 id="orgheadline25">shell config: .bashrc</h5>
-<div class="outline-text-5" id="text-orgheadline25">
+<div id="outline-container-orgheadline39" class="outline-3">
+<h3 id="orgheadline39">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline39">
+</div><div id="outline-container-orgheadline33" class="outline-4">
+<h4 id="orgheadline33">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgheadline33">
+</div><div id="outline-container-orgheadline27" class="outline-5">
+<h5 id="orgheadline27">shell config: .bashrc</h5>
+<div class="outline-text-5" id="text-orgheadline27">
 <ul class="org-ul">
 <li><p>
 aliases(or put in .bashaliases):
@@ -685,9 +705,9 @@ terminal colors:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline26" class="outline-5">
-<h5 id="orgheadline26">global config: /etc/profile</h5>
-<div class="outline-text-5" id="text-orgheadline26">
+<div id="outline-container-orgheadline28" class="outline-5">
+<h5 id="orgheadline28">global config: /etc/profile</h5>
+<div class="outline-text-5" id="text-orgheadline28">
 <ul class="org-ul">
 <li><p>
 path:
@@ -700,17 +720,17 @@ path:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline28" class="outline-5">
-<h5 id="orgheadline28">auto run: /etc/rc.local</h5>
-<div class="outline-text-5" id="text-orgheadline28">
+<div id="outline-container-orgheadline30" class="outline-5">
+<h5 id="orgheadline30">auto run: /etc/rc.local</h5>
+<div class="outline-text-5" id="text-orgheadline30">
 <ul class="org-ul">
-<li><a href="#orgheadline27">auto run on startup</a></li>
+<li><a href="#orgheadline29">auto run on startup</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline29" class="outline-5">
-<h5 id="orgheadline29">show version</h5>
-<div class="outline-text-5" id="text-orgheadline29">
+<div id="outline-container-orgheadline31" class="outline-5">
+<h5 id="orgheadline31">show version</h5>
+<div class="outline-text-5" id="text-orgheadline31">
 <div class="org-src-container">
 
 <pre class="src src-sh">lsb_release -a
@@ -728,9 +748,9 @@ Codename:  xenial
 </div>
 </div>
 
-<div id="outline-container-orgheadline27" class="outline-5">
-<h5 id="orgheadline27">auto run on startup</h5>
-<div class="outline-text-5" id="text-orgheadline27">
+<div id="outline-container-orgheadline29" class="outline-5">
+<h5 id="orgheadline29">auto run on startup</h5>
+<div class="outline-text-5" id="text-orgheadline29">
 <ul class="org-ul">
 <li>edit /etc/rc.local, add command to run on startup:</li>
 </ul>
@@ -745,9 +765,9 @@ Codename:  xenial
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline30" class="outline-5">
-<h5 id="orgheadline30">default PS1 location (ubt)</h5>
-<div class="outline-text-5" id="text-orgheadline30">
+<div id="outline-container-orgheadline32" class="outline-5">
+<h5 id="orgheadline32">default PS1 location (ubt)</h5>
+<div class="outline-text-5" id="text-orgheadline32">
 <p>
 <b>~/.bashrc</b>
 </p>
@@ -763,16 +783,17 @@ Codename:  xenial
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline33" class="outline-4">
-<h4 id="orgheadline33">Debian</h4>
-<div class="outline-text-4" id="text-orgheadline33">
-</div><div id="outline-container-orgheadline32" class="outline-5">
-<h5 id="orgheadline32">VirtualBox addon installation</h5>
-<div class="outline-text-5" id="text-orgheadline32">
+<div id="outline-container-orgheadline35" class="outline-4">
+<h4 id="orgheadline35">Debian</h4>
+<div class="outline-text-4" id="text-orgheadline35">
+</div><div id="outline-container-orgheadline34" class="outline-5">
+<h5 id="orgheadline34">VirtualBox addon installation</h5>
+<div class="outline-text-5" id="text-orgheadline34">
 <ul class="org-ul">
 <li>use root or add your account to super user</li>
-<li>follow this shell</li>
-</ul>
+<li><p>
+follow this shell
+</p>
 <div class="org-src-container">
 
 <pre class="src src-sh">sudo apt-get update
@@ -781,16 +802,17 @@ sudo apt-get install build-essential module-assistant
 <span style="color: #e090d7;">cd</span> /media/cdrom0
 sudo bash VBoxLinuxAdditions.run
 </pre>
+</div></li>
+</ul>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-orgheadline36" class="outline-4">
-<h4 id="orgheadline36">CentOS</h4>
-<div class="outline-text-4" id="text-orgheadline36">
-</div><div id="outline-container-orgheadline34" class="outline-5">
-<h5 id="orgheadline34">distcc installation on centos 6.7</h5>
-<div class="outline-text-5" id="text-orgheadline34">
+<div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38">CentOS</h4>
+<div class="outline-text-4" id="text-orgheadline38">
+</div><div id="outline-container-orgheadline36" class="outline-5">
+<h5 id="orgheadline36">distcc installation on centos 6.7</h5>
+<div class="outline-text-5" id="text-orgheadline36">
 <ul class="org-ul">
 <li><p>
 install prerequisities
@@ -882,9 +904,9 @@ monitor building status
 </div>
 </div>
 
-<div id="outline-container-orgheadline35" class="outline-5">
-<h5 id="orgheadline35">ntp for time update</h5>
-<div class="outline-text-5" id="text-orgheadline35">
+<div id="outline-container-orgheadline37" class="outline-5">
+<h5 id="orgheadline37">ntp for time update</h5>
+<div class="outline-text-5" id="text-orgheadline37">
 <ul class="org-ul">
 <li><p>
 install ntp
@@ -934,18 +956,18 @@ check ntp status
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline44" class="outline-2">
-<h2 id="orgheadline44">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline44">
-</div><div id="outline-container-orgheadline43" class="outline-3">
-<h3 id="orgheadline43">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline43">
-</div><div id="outline-container-orgheadline40" class="outline-4">
-<h4 id="orgheadline40">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline40">
-</div><div id="outline-container-orgheadline39" class="outline-5">
-<h5 id="orgheadline39">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline39">
+<div id="outline-container-orgheadline46" class="outline-2">
+<h2 id="orgheadline46">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline46">
+</div><div id="outline-container-orgheadline45" class="outline-3">
+<h3 id="orgheadline45">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline45">
+</div><div id="outline-container-orgheadline42" class="outline-4">
+<h4 id="orgheadline42">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline42">
+</div><div id="outline-container-orgheadline41" class="outline-5">
+<h5 id="orgheadline41">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline41">
 <p>
 nested if is not allowed in ahk script:     
 </p>
@@ -984,12 +1006,12 @@ you can wrap it to another function:
 </div>
 </div>
 
-<div id="outline-container-orgheadline42" class="outline-4">
-<h4 id="orgheadline42">cygwin</h4>
-<div class="outline-text-4" id="text-orgheadline42">
-</div><div id="outline-container-orgheadline41" class="outline-5">
-<h5 id="orgheadline41">default PS1 location</h5>
-<div class="outline-text-5" id="text-orgheadline41">
+<div id="outline-container-orgheadline44" class="outline-4">
+<h4 id="orgheadline44">cygwin</h4>
+<div class="outline-text-4" id="text-orgheadline44">
+</div><div id="outline-container-orgheadline43" class="outline-5">
+<h5 id="orgheadline43">default PS1 location</h5>
+<div class="outline-text-5" id="text-orgheadline43">
 <p>
 <b>/etc/bash.bashrc</b>
 </p>

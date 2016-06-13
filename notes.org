@@ -224,6 +224,12 @@
 	   }
 	   #+END_SRC
 	   your data will show as well
+** VirtualBox
+*** remote desktop for vm
+	- install virtualbox addon
+	- enable vrdp by vm -> setting -> display -> enable server
+	- specify a port number, verify method should be null
+	- on windows: use mstsc.exe to connect 127.0.0.1:PORT
 * Linux
 ** Tools
 *** iftop
