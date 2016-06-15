@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-06-13 Mon 16:37 -->
+<!-- 2016-06-15 Wed 13:51 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -94,7 +94,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline40">Linux</a>
+<li><a href="#orgheadline42">Linux</a>
 <ul>
 <li><a href="#orgheadline26">Tools</a>
 <ul>
@@ -102,21 +102,21 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline25">bash</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline39">Distributions</a>
+<li><a href="#orgheadline41">Distributions</a>
 <ul>
-<li><a href="#orgheadline33">Ubuntu</a></li>
-<li><a href="#orgheadline35">Debian</a></li>
-<li><a href="#orgheadline38">CentOS</a></li>
+<li><a href="#orgheadline34">Ubuntu</a></li>
+<li><a href="#orgheadline37">Debian</a></li>
+<li><a href="#orgheadline40">CentOS</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline46">Windows</a>
+<li><a href="#orgheadline48">Windows</a>
 <ul>
-<li><a href="#orgheadline45">Tools</a>
+<li><a href="#orgheadline47">Tools</a>
 <ul>
-<li><a href="#orgheadline42">Auto Hot Key</a></li>
-<li><a href="#orgheadline44">cygwin</a></li>
+<li><a href="#orgheadline44">Auto Hot Key</a></li>
+<li><a href="#orgheadline46">cygwin</a></li>
 </ul>
 </li>
 </ul>
@@ -622,9 +622,9 @@ your data will show as well
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline40" class="outline-2">
-<h2 id="orgheadline40">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline40">
+<div id="outline-container-orgheadline42" class="outline-2">
+<h2 id="orgheadline42">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline42">
 </div><div id="outline-container-orgheadline26" class="outline-3">
 <h3 id="orgheadline26">Tools</h3>
 <div class="outline-text-3" id="text-orgheadline26">
@@ -660,7 +660,7 @@ to solve this, add param before launching iftop
 <h5 id="orgheadline24">aliased variable not work in sudo command</h5>
 <div class="outline-text-5" id="text-orgheadline24">
 <p>
-assuming 'iftop' is aliased to be 'NCURSES_NO_UTF8_ACS=1 iftop' to avoid <a href="notes.html#orgheadline20">display issue</a> <br  />
+assuming 'iftop' is aliased to be 'NCURSES_NO_UTF8_ACS=1 iftop' to avoid <a href="notes.html#orgheadline22">display issue</a> <br  />
 this will not work using 'sudo iftop', but 'sudo NCURSES_NO_UTF8_ACS=1 iftop' works. <br  />
 to fix this, add an alias for 'sudo':
 </p>
@@ -676,12 +676,12 @@ note that there's no space in the equation, the backslash prevents rescursive 's
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline39" class="outline-3">
-<h3 id="orgheadline39">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline39">
-</div><div id="outline-container-orgheadline33" class="outline-4">
-<h4 id="orgheadline33">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgheadline33">
+<div id="outline-container-orgheadline41" class="outline-3">
+<h3 id="orgheadline41">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline41">
+</div><div id="outline-container-orgheadline34" class="outline-4">
+<h4 id="orgheadline34">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgheadline34">
 </div><div id="outline-container-orgheadline27" class="outline-5">
 <h5 id="orgheadline27">shell config: .bashrc</h5>
 <div class="outline-text-5" id="text-orgheadline27">
@@ -782,13 +782,84 @@ Codename:  xenial
 </div>
 </div>
 </div>
+<div id="outline-container-orgheadline33" class="outline-5">
+<h5 id="orgheadline33">installing virtualbox on ubuntu 16.04</h5>
+<div class="outline-text-5" id="text-orgheadline33">
+<ul class="org-ul">
+<li>install virtualbox</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">emacs /etc/apt/sources.list <span style="color: #73d216;"># </span><span style="color: #73d216;">add the following line w/o comment</span>
+<span style="color: #73d216;">#</span><span style="color: #73d216;">deb http://download.virtualbox.org/virtualbox/debian xenial contrib</span>
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install build-essential apache2 libapache2-mod-php virtualbox-5.0
+</pre>
 </div>
-<div id="outline-container-orgheadline35" class="outline-4">
-<h4 id="orgheadline35">Debian</h4>
-<div class="outline-text-4" id="text-orgheadline35">
-</div><div id="outline-container-orgheadline34" class="outline-5">
-<h5 id="orgheadline34">VirtualBox addon installation</h5>
-<div class="outline-text-5" id="text-orgheadline34">
+<ul class="org-ul">
+<li><p>
+setup user
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo useradd -d /home/vbox -m -g vboxusers -s /bin/bash vbox <span style="color: #73d216;">#</span><span style="color: #73d216;">create folder and user</span>
+sudo passwd vbox <span style="color: #73d216;">#</span><span style="color: #73d216;">set vbox password</span>
+sudo emacs /etc/default/virtualbox <span style="color: #73d216;">#</span><span style="color: #73d216;">set default VBOXWEB_USER &amp; HOST:</span>
+<span style="color: #73d216;">#</span><span style="color: #73d216;">VBOXWEB_USER=vbox</span>
+<span style="color: #73d216;">#</span><span style="color: #73d216;">VBOXWEB_HOST=127.0.0.1</span>
+</pre>
+</div></li>
+<li><p>
+install virtualbox extpack
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.20-106931.vbox-extpack
+</pre>
+</div></li>
+<li><p>
+install phpvirtualbox
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">unzip phpvirtualbox-5.0-5.zip
+mv phpvirtualbox-5.0-5 /var/www/html/vbox
+<span style="color: #e090d7;">cd</span> /var/www/html/vbox/
+cp config.php-example config.php
+</pre>
+</div></li>
+<li><p>
+configure phpvirtualbox(config.php)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-php">/* Username / Password for system user that runs VirtualBox */
+var $username = 'vbox';
+var $password = 'password';
+</pre>
+</div></li>
+<li><p>
+launch vbox web server
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo service vboxweb-service stop
+sudo /sbin/rcvboxdrv setup
+sudo service vboxweb-service start
+su vbox -c <span style="color: #e9b96e;">'/usr/bin/vboxwebsrv'</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline37" class="outline-4">
+<h4 id="orgheadline37">Debian</h4>
+<div class="outline-text-4" id="text-orgheadline37">
+</div><div id="outline-container-orgheadline35" class="outline-5">
+<h5 id="orgheadline35">VirtualBox addon installation</h5>
+<div class="outline-text-5" id="text-orgheadline35">
 <ul class="org-ul">
 <li>use root or add your account to super user</li>
 <li><p>
@@ -806,13 +877,92 @@ sudo bash VBoxLinuxAdditions.run
 </ul>
 </div>
 </div>
-</div>
-<div id="outline-container-orgheadline38" class="outline-4">
-<h4 id="orgheadline38">CentOS</h4>
-<div class="outline-text-4" id="text-orgheadline38">
-</div><div id="outline-container-orgheadline36" class="outline-5">
-<h5 id="orgheadline36">distcc installation on centos 6.7</h5>
+<div id="outline-container-orgheadline36" class="outline-5">
+<h5 id="orgheadline36">Installing Virtualbox w/o GUI</h5>
 <div class="outline-text-5" id="text-orgheadline36">
+<ul class="org-ul">
+<li>install apache &amp; php</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo apt-get install libapache2-mod-php5 apache2
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+install virtualbox
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #73d216;"># </span><span style="color: #73d216;">deb package install will fail, use apt</span>
+emacs /etc/apt/sources.list <span style="color: #73d216;"># </span><span style="color: #73d216;">add the following line w/o comment, note the debian version name</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">deb http://download.virtualbox.org/virtualbox/debian jessie contrib</span>
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - <span style="color: #73d216;"># </span><span style="color: #73d216;">add apt key</span>
+sudo apt-get update
+sudo apt-get install virtualbox-5.0
+</pre>
+</div></li>
+<li><p>
+setup user &amp; group
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo groupadd vboxusers <span style="color: #73d216;">#</span><span style="color: #73d216;">create user group</span>
+sudo useradd -d /home/vbox -m -g vboxusers -s /bin/bash vbox <span style="color: #73d216;">#</span><span style="color: #73d216;">create folder and user</span>
+sudo passwd vbox <span style="color: #73d216;">#</span><span style="color: #73d216;">set vbox password</span>
+sudo emacs /etc/default/virtualbox <span style="color: #73d216;">#</span><span style="color: #73d216;">set default VBOXWEB_USER &amp; HOST:</span>
+<span style="color: #73d216;">#</span><span style="color: #73d216;">VBOXWEB_USER=vbox</span>
+<span style="color: #73d216;">#</span><span style="color: #73d216;">VBOXWEB_HOST=127.0.0.1</span>
+</pre>
+</div></li>
+<li><p>
+install virtualbox extpack
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.20-106931.vbox-extpack
+</pre>
+</div></li>
+<li><p>
+install phpvirtualbox
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">unzip phpvirtualbox-5.0-5.zip
+mv phpvirtualbox-5.0-5 /var/www/html/vbox
+<span style="color: #e090d7;">cd</span> /var/www/html/vbox/
+cp config.php-example config.php
+</pre>
+</div></li>
+<li><p>
+configure phpvirtualbox(config.php)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-php">/* Username / Password for system user that runs VirtualBox */
+var $username = 'vbox';
+var $password = 'password';
+</pre>
+</div></li>
+<li><p>
+launch vbox web server
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo -u vbox vboxwebsrv -b &amp;&gt;&gt; /dev/null <span style="color: #73d216;"># </span><span style="color: #73d216;">-b:daemon, discard output, this will not work on ubuntu 16.04</span>
+sudo pkill vboxwebsrv <span style="color: #73d216;"># </span><span style="color: #73d216;">kill if needed</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40">CentOS</h4>
+<div class="outline-text-4" id="text-orgheadline40">
+</div><div id="outline-container-orgheadline38" class="outline-5">
+<h5 id="orgheadline38">distcc installation on centos 6.7</h5>
+<div class="outline-text-5" id="text-orgheadline38">
 <ul class="org-ul">
 <li><p>
 install prerequisities
@@ -904,9 +1054,9 @@ monitor building status
 </div>
 </div>
 
-<div id="outline-container-orgheadline37" class="outline-5">
-<h5 id="orgheadline37">ntp for time update</h5>
-<div class="outline-text-5" id="text-orgheadline37">
+<div id="outline-container-orgheadline39" class="outline-5">
+<h5 id="orgheadline39">ntp for time update</h5>
+<div class="outline-text-5" id="text-orgheadline39">
 <ul class="org-ul">
 <li><p>
 install ntp
@@ -956,18 +1106,18 @@ check ntp status
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline46" class="outline-2">
-<h2 id="orgheadline46">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline46">
-</div><div id="outline-container-orgheadline45" class="outline-3">
-<h3 id="orgheadline45">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline45">
-</div><div id="outline-container-orgheadline42" class="outline-4">
-<h4 id="orgheadline42">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline42">
-</div><div id="outline-container-orgheadline41" class="outline-5">
-<h5 id="orgheadline41">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline41">
+<div id="outline-container-orgheadline48" class="outline-2">
+<h2 id="orgheadline48">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline48">
+</div><div id="outline-container-orgheadline47" class="outline-3">
+<h3 id="orgheadline47">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline47">
+</div><div id="outline-container-orgheadline44" class="outline-4">
+<h4 id="orgheadline44">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline44">
+</div><div id="outline-container-orgheadline43" class="outline-5">
+<h5 id="orgheadline43">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline43">
 <p>
 nested if is not allowed in ahk script:     
 </p>
@@ -1006,12 +1156,12 @@ you can wrap it to another function:
 </div>
 </div>
 
-<div id="outline-container-orgheadline44" class="outline-4">
-<h4 id="orgheadline44">cygwin</h4>
-<div class="outline-text-4" id="text-orgheadline44">
-</div><div id="outline-container-orgheadline43" class="outline-5">
-<h5 id="orgheadline43">default PS1 location</h5>
-<div class="outline-text-5" id="text-orgheadline43">
+<div id="outline-container-orgheadline46" class="outline-4">
+<h4 id="orgheadline46">cygwin</h4>
+<div class="outline-text-4" id="text-orgheadline46">
+</div><div id="outline-container-orgheadline45" class="outline-5">
+<h5 id="orgheadline45">default PS1 location</h5>
+<div class="outline-text-5" id="text-orgheadline45">
 <p>
 <b>/etc/bash.bashrc</b>
 </p>

@@ -6,6 +6,9 @@
 
 * 2016
 ** June
+*** <2016-06-15 Wed>
+**** [[file:notes.org::* installing virtualbox on ubuntu 16.04][installing virtualbox on ubuntu 16.04]]							  :linux:
+**** [[file:notes.org::* Installing Virtualbox w/o GUI][Debian:Installing Virtualbox w/o GUI]]							  :linux:
 *** <2016-06-13 Mon>
 **** [[file:notes.org::* remote desktop for vm][remote desktop]] 											 :virtualbox:
 *** <2016-06-03 Fri>

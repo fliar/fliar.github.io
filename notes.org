@@ -300,6 +300,47 @@
      	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
 	 fi
 	 #+END_SRC
+**** installing virtualbox on ubuntu 16.04
+	 - install virtualbox
+	 #+BEGIN_SRC sh
+	 emacs /etc/apt/sources.list # add the following line w/o comment
+	 #deb http://download.virtualbox.org/virtualbox/debian xenial contrib
+	 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+	 sudo apt-get update
+	 sudo apt-get install build-essential apache2 libapache2-mod-php virtualbox-5.0
+	 #+END_SRC
+   - setup user
+	 #+BEGIN_SRC sh
+	 sudo useradd -d /home/vbox -m -g vboxusers -s /bin/bash vbox #create folder and user
+	 sudo passwd vbox #set vbox password
+	 sudo emacs /etc/default/virtualbox #set default VBOXWEB_USER & HOST:
+	 #VBOXWEB_USER=vbox
+	 #VBOXWEB_HOST=127.0.0.1
+	 #+END_SRC
+   - install virtualbox extpack
+	 #+BEGIN_SRC sh
+	 sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.20-106931.vbox-extpack
+	 #+END_SRC
+   - install phpvirtualbox
+	 #+BEGIN_SRC sh
+	 unzip phpvirtualbox-5.0-5.zip
+	 mv phpvirtualbox-5.0-5 /var/www/html/vbox
+	 cd /var/www/html/vbox/
+	 cp config.php-example config.php
+	 #+END_SRC
+   - configure phpvirtualbox(config.php)
+	 #+BEGIN_SRC php
+	 /* Username / Password for system user that runs VirtualBox */
+	 var $username = 'vbox';
+	 var $password = 'password';
+	 #+END_SRC
+   - launch vbox web server
+	 #+BEGIN_SRC sh
+	 sudo service vboxweb-service stop
+	 sudo /sbin/rcvboxdrv setup
+	 sudo service vboxweb-service start
+	 su vbox -c '/usr/bin/vboxwebsrv'
+	 #+END_SRC
 *** Debian
 **** VirtualBox addon installation
 	 - use root or add your account to super user
@@ -311,6 +352,51 @@
 	   cd /media/cdrom0
 	   sudo bash VBoxLinuxAdditions.run
 	   #+END_SRC
+**** Installing Virtualbox w/o GUI
+	 - install apache & php
+	 #+BEGIN_SRC sh
+	 sudo apt-get install libapache2-mod-php5 apache2
+	 #+END_SRC
+   - install virtualbox
+	 #+BEGIN_SRC sh
+	 # deb package install will fail, use apt
+	 emacs /etc/apt/sources.list # add the following line w/o comment, note the debian version name
+	 # deb http://download.virtualbox.org/virtualbox/debian jessie contrib
+	 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - # add apt key
+	 sudo apt-get update
+	 sudo apt-get install virtualbox-5.0
+	 #+END_SRC
+   - setup user & group
+	 #+BEGIN_SRC sh
+	 sudo groupadd vboxusers #create user group
+	 sudo useradd -d /home/vbox -m -g vboxusers -s /bin/bash vbox #create folder and user
+	 sudo passwd vbox #set vbox password
+	 sudo emacs /etc/default/virtualbox #set default VBOXWEB_USER & HOST:
+	 #VBOXWEB_USER=vbox
+	 #VBOXWEB_HOST=127.0.0.1
+	 #+END_SRC
+   - install virtualbox extpack
+	 #+BEGIN_SRC sh
+	 sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.20-106931.vbox-extpack
+	 #+END_SRC
+   - install phpvirtualbox
+	 #+BEGIN_SRC sh
+	 unzip phpvirtualbox-5.0-5.zip
+	 mv phpvirtualbox-5.0-5 /var/www/html/vbox
+	 cd /var/www/html/vbox/
+	 cp config.php-example config.php
+	 #+END_SRC
+   - configure phpvirtualbox(config.php)
+	 #+BEGIN_SRC php
+	 /* Username / Password for system user that runs VirtualBox */
+	 var $username = 'vbox';
+	 var $password = 'password';
+	 #+END_SRC
+   - launch vbox web server
+	 #+BEGIN_SRC sh
+	 sudo -u vbox vboxwebsrv -b &>> /dev/null # -b:daemon, discard output, this will not work on ubuntu 16.04
+	 sudo pkill vboxwebsrv # kill if needed
+	 #+END_SRC
 *** CentOS
 **** distcc installation on centos 6.7
 	 - install prerequisities
