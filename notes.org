@@ -341,6 +341,26 @@
 	 sudo service vboxweb-service start
 	 su vbox -c '/usr/bin/vboxwebsrv'
 	 #+END_SRC
+**** lightdm auto launch gui app on start
+	 - auto login user
+	   - edit lightdm conf to set login user
+		 - ~/etc/lightdm/lightdm.conf~ or
+		 - ~/etc/lightdm/lightdm.conf.d/12-autologin.conf~
+	   - in *[SeatDefaults]* section, set default login user:
+		 #+BEGIN_SRC sh
+		 autologin-user=user
+		 #+END_SRC
+	 - launch before user login
+	   - edit lightdm conf to set script to run after display setup
+	   - in *[SeatDefaults]* section, set script:
+		 #+BEGIN_SRC sh
+		 display-setup-script=/etc/lightdm/autorun.sh
+		 #+END_SRC
+	   - edit autorun.sh to add app
+		 #+BEGIN_SRC sh
+		 #! /bin/bash
+		 exec leafpad & # modify to your app
+		 #+END_SRC
 *** Debian
 **** VirtualBox addon installation
 	 - use root or add your account to super user

@@ -6,6 +6,8 @@
 
 * 2016
 ** June
+*** <2016-06-21 Tue>
+**** [[file:notes.org::* lightdm auto launch gui app on start][lightdm: auto launch gui app on start]]					   :linux:ubuntu:
 *** <2016-06-15 Wed>
 **** [[file:notes.org::* installing virtualbox on ubuntu 16.04][installing virtualbox on ubuntu 16.04]]							  :linux:
 **** [[file:notes.org::* Installing Virtualbox w/o GUI][Debian:Installing Virtualbox w/o GUI]]							  :linux:

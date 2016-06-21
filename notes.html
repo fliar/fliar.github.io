@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-06-15 Wed 13:51 -->
+<!-- 2016-06-21 Tue 14:00 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -94,7 +94,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline42">Linux</a>
+<li><a href="#orgheadline43">Linux</a>
 <ul>
 <li><a href="#orgheadline26">Tools</a>
 <ul>
@@ -102,21 +102,21 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline25">bash</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline41">Distributions</a>
+<li><a href="#orgheadline42">Distributions</a>
 <ul>
-<li><a href="#orgheadline34">Ubuntu</a></li>
-<li><a href="#orgheadline37">Debian</a></li>
-<li><a href="#orgheadline40">CentOS</a></li>
+<li><a href="#orgheadline35">Ubuntu</a></li>
+<li><a href="#orgheadline38">Debian</a></li>
+<li><a href="#orgheadline41">CentOS</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline48">Windows</a>
+<li><a href="#orgheadline49">Windows</a>
 <ul>
-<li><a href="#orgheadline47">Tools</a>
+<li><a href="#orgheadline48">Tools</a>
 <ul>
-<li><a href="#orgheadline44">Auto Hot Key</a></li>
-<li><a href="#orgheadline46">cygwin</a></li>
+<li><a href="#orgheadline45">Auto Hot Key</a></li>
+<li><a href="#orgheadline47">cygwin</a></li>
 </ul>
 </li>
 </ul>
@@ -622,9 +622,9 @@ your data will show as well
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline42" class="outline-2">
-<h2 id="orgheadline42">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline42">
+<div id="outline-container-orgheadline43" class="outline-2">
+<h2 id="orgheadline43">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline43">
 </div><div id="outline-container-orgheadline26" class="outline-3">
 <h3 id="orgheadline26">Tools</h3>
 <div class="outline-text-3" id="text-orgheadline26">
@@ -676,12 +676,12 @@ note that there's no space in the equation, the backslash prevents rescursive 's
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline41" class="outline-3">
-<h3 id="orgheadline41">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline41">
-</div><div id="outline-container-orgheadline34" class="outline-4">
-<h4 id="orgheadline34">Ubuntu</h4>
-<div class="outline-text-4" id="text-orgheadline34">
+<div id="outline-container-orgheadline42" class="outline-3">
+<h3 id="orgheadline42">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline42">
+</div><div id="outline-container-orgheadline35" class="outline-4">
+<h4 id="orgheadline35">Ubuntu</h4>
+<div class="outline-text-4" id="text-orgheadline35">
 </div><div id="outline-container-orgheadline27" class="outline-5">
 <h5 id="orgheadline27">shell config: .bashrc</h5>
 <div class="outline-text-5" id="text-orgheadline27">
@@ -853,13 +853,57 @@ su vbox -c <span style="color: #e9b96e;">'/usr/bin/vboxwebsrv'</span>
 </ul>
 </div>
 </div>
+<div id="outline-container-orgheadline34" class="outline-5">
+<h5 id="orgheadline34">lightdm auto launch gui app on start</h5>
+<div class="outline-text-5" id="text-orgheadline34">
+<ul class="org-ul">
+<li>auto login user
+<ul class="org-ul">
+<li>edit lightdm conf to set login user
+<ul class="org-ul">
+<li><code>/etc/lightdm/lightdm.conf</code> or</li>
+<li><code>/etc/lightdm/lightdm.conf.d/12-autologin.conf</code></li>
+</ul></li>
+<li><p>
+in <b>[SeatDefaults]</b> section, set default login user:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">autologin-user=user
+</pre>
+</div></li>
+</ul></li>
+<li>launch before user login
+<ul class="org-ul">
+<li>edit lightdm conf to set script to run after display setup</li>
+<li><p>
+in <b>[SeatDefaults]</b> section, set script:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">display-setup-script=/etc/lightdm/autorun.sh
+</pre>
+</div></li>
+<li><p>
+edit autorun.sh to add app
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #73d216;">#</span><span style="color: #73d216;">! /bin/</span><span style="color: #b4fa70;">bash</span>
+<span style="color: #b4fa70;">exec</span> leafpad &amp; <span style="color: #73d216;"># </span><span style="color: #73d216;">modify to your app</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-orgheadline37" class="outline-4">
-<h4 id="orgheadline37">Debian</h4>
-<div class="outline-text-4" id="text-orgheadline37">
-</div><div id="outline-container-orgheadline35" class="outline-5">
-<h5 id="orgheadline35">VirtualBox addon installation</h5>
-<div class="outline-text-5" id="text-orgheadline35">
+</div>
+</div>
+<div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38">Debian</h4>
+<div class="outline-text-4" id="text-orgheadline38">
+</div><div id="outline-container-orgheadline36" class="outline-5">
+<h5 id="orgheadline36">VirtualBox addon installation</h5>
+<div class="outline-text-5" id="text-orgheadline36">
 <ul class="org-ul">
 <li>use root or add your account to super user</li>
 <li><p>
@@ -877,9 +921,9 @@ sudo bash VBoxLinuxAdditions.run
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline36" class="outline-5">
-<h5 id="orgheadline36">Installing Virtualbox w/o GUI</h5>
-<div class="outline-text-5" id="text-orgheadline36">
+<div id="outline-container-orgheadline37" class="outline-5">
+<h5 id="orgheadline37">Installing Virtualbox w/o GUI</h5>
+<div class="outline-text-5" id="text-orgheadline37">
 <ul class="org-ul">
 <li>install apache &amp; php</li>
 </ul>
@@ -957,12 +1001,12 @@ sudo pkill vboxwebsrv <span style="color: #73d216;"># </span><span style="color:
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline40" class="outline-4">
-<h4 id="orgheadline40">CentOS</h4>
-<div class="outline-text-4" id="text-orgheadline40">
-</div><div id="outline-container-orgheadline38" class="outline-5">
-<h5 id="orgheadline38">distcc installation on centos 6.7</h5>
-<div class="outline-text-5" id="text-orgheadline38">
+<div id="outline-container-orgheadline41" class="outline-4">
+<h4 id="orgheadline41">CentOS</h4>
+<div class="outline-text-4" id="text-orgheadline41">
+</div><div id="outline-container-orgheadline39" class="outline-5">
+<h5 id="orgheadline39">distcc installation on centos 6.7</h5>
+<div class="outline-text-5" id="text-orgheadline39">
 <ul class="org-ul">
 <li><p>
 install prerequisities
@@ -1054,9 +1098,9 @@ monitor building status
 </div>
 </div>
 
-<div id="outline-container-orgheadline39" class="outline-5">
-<h5 id="orgheadline39">ntp for time update</h5>
-<div class="outline-text-5" id="text-orgheadline39">
+<div id="outline-container-orgheadline40" class="outline-5">
+<h5 id="orgheadline40">ntp for time update</h5>
+<div class="outline-text-5" id="text-orgheadline40">
 <ul class="org-ul">
 <li><p>
 install ntp
@@ -1106,18 +1150,18 @@ check ntp status
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline48" class="outline-2">
-<h2 id="orgheadline48">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline48">
-</div><div id="outline-container-orgheadline47" class="outline-3">
-<h3 id="orgheadline47">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline47">
-</div><div id="outline-container-orgheadline44" class="outline-4">
-<h4 id="orgheadline44">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline44">
-</div><div id="outline-container-orgheadline43" class="outline-5">
-<h5 id="orgheadline43">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline43">
+<div id="outline-container-orgheadline49" class="outline-2">
+<h2 id="orgheadline49">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline49">
+</div><div id="outline-container-orgheadline48" class="outline-3">
+<h3 id="orgheadline48">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline48">
+</div><div id="outline-container-orgheadline45" class="outline-4">
+<h4 id="orgheadline45">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline45">
+</div><div id="outline-container-orgheadline44" class="outline-5">
+<h5 id="orgheadline44">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline44">
 <p>
 nested if is not allowed in ahk script:     
 </p>
@@ -1156,12 +1200,12 @@ you can wrap it to another function:
 </div>
 </div>
 
-<div id="outline-container-orgheadline46" class="outline-4">
-<h4 id="orgheadline46">cygwin</h4>
-<div class="outline-text-4" id="text-orgheadline46">
-</div><div id="outline-container-orgheadline45" class="outline-5">
-<h5 id="orgheadline45">default PS1 location</h5>
-<div class="outline-text-5" id="text-orgheadline45">
+<div id="outline-container-orgheadline47" class="outline-4">
+<h4 id="orgheadline47">cygwin</h4>
+<div class="outline-text-4" id="text-orgheadline47">
+</div><div id="outline-container-orgheadline46" class="outline-5">
+<h5 id="orgheadline46">default PS1 location</h5>
+<div class="outline-text-5" id="text-orgheadline46">
 <p>
 <b>/etc/bash.bashrc</b>
 </p>
