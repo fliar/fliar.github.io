@@ -230,6 +230,12 @@
 	- enable vrdp by vm -> setting -> display -> enable server
 	- specify a port number, verify method should be null
 	- on windows: use mstsc.exe to connect 127.0.0.1:PORT
+** curl
+*** post form using curl
+	using ~-d~ param and split fields with ~&~:
+	#+BEGIN_SRC sh
+	curl -d "action=download&&id=2&uhash=b" http://www.b.com/dl2.php > a.sav
+	#+END_SRC
 * Linux
 ** Tools
 *** iftop

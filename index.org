@@ -6,6 +6,8 @@
 
 * 2016
 ** June
+*** <2016-06-24 Fri>
+**** [[file:notes.org::* post form using curl][post form using curl]]											   :curl:
 *** <2016-06-21 Tue>
 **** [[file:notes.org::* lightdm auto launch gui app on start][lightdm: auto launch gui app on start]]					   :linux:ubuntu:
 *** <2016-06-15 Wed>
