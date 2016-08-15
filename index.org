@@ -5,6 +5,9 @@
 #+OPTIONS: H:4 num:nil toc:3
 
 * 2016
+** August
+*** <2016-08-15 Mon>
+**** [[file:notes.org::* enable/disable .DS_Store][enable/disable .DS_Store]]											:mac:
 ** June
 *** <2016-06-24 Fri>
 **** [[file:notes.org::* post form using curl][post form using curl]]											   :curl:

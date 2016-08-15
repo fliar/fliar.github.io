@@ -543,3 +543,18 @@
 	 # Set a default prompt of: user@host and current_directory
 	 PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
 	 #+END_SRC
+* Mac
+** System
+*** Finder
+**** enable/disable .DS_Store
+	 .DS_Store is a file that stores custom attributes of its containing folder.
+	 the name is an abbreviation of Desktop Services Store
+	 to enable/disable it, execute these commands in terminal
+	 - Disable
+	   #+BEGIN_SRC shell
+	   defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+	   #+END_SRC	   
+	 - Enable
+	   #+BEGIN_SRC shell
+	   defaults delete com.apple.desktopservices DSDontWriteNetworkStores
+	   #+END_SRC

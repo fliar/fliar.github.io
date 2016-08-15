@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-06-24 Fri 14:29 -->
+<!-- 2016-08-15 Mon 14:06 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -122,6 +122,15 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgheadline47">Auto Hot Key</a></li>
 <li><a href="#orgheadline49">cygwin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline55">Mac</a>
+<ul>
+<li><a href="#orgheadline54">System</a>
+<ul>
+<li><a href="#orgheadline53">Finder</a></li>
 </ul>
 </li>
 </ul>
@@ -685,7 +694,7 @@ to solve this, add param before launching iftop
 <h5 id="orgheadline26">aliased variable not work in sudo command</h5>
 <div class="outline-text-5" id="text-orgheadline26">
 <p>
-assuming 'iftop' is aliased to be 'NCURSES_NO_UTF8_ACS=1 iftop' to avoid <a href="notes.html#orgheadline22">display issue</a> <br  />
+assuming 'iftop' is aliased to be 'NCURSES_NO_UTF8_ACS=1 iftop' to avoid <a href="notes.html#orgheadline24">display issue</a> <br  />
 this will not work using 'sudo iftop', but 'sudo NCURSES_NO_UTF8_ACS=1 iftop' works. <br  />
 to fix this, add an alias for 'sudo':
 </p>
@@ -1240,6 +1249,46 @@ you can wrap it to another function:
 <span style="color: #fcaf3e;">PS1</span>=<span style="color: #e9b96e;">'\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '</span>
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline55" class="outline-2">
+<h2 id="orgheadline55">Mac</h2>
+<div class="outline-text-2" id="text-orgheadline55">
+</div><div id="outline-container-orgheadline54" class="outline-3">
+<h3 id="orgheadline54">System</h3>
+<div class="outline-text-3" id="text-orgheadline54">
+</div><div id="outline-container-orgheadline53" class="outline-4">
+<h4 id="orgheadline53">Finder</h4>
+<div class="outline-text-4" id="text-orgheadline53">
+</div><div id="outline-container-orgheadline52" class="outline-5">
+<h5 id="orgheadline52">enable/disable .DS_Store</h5>
+<div class="outline-text-5" id="text-orgheadline52">
+<p>
+.DS_Store is a file that stores custom attributes of its containing folder.
+the name is an abbreviation of Desktop Services Store
+to enable/disable it, execute these commands in terminal
+</p>
+<ul class="org-ul">
+<li><p>
+Disable
+</p>
+<div class="org-src-container">
+
+<pre class="src src-shell">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+</pre>
+</div></li>
+<li><p>
+Enable
+</p>
+<div class="org-src-container">
+
+<pre class="src src-shell">defaults delete com.apple.desktopservices DSDontWriteNetworkStores
+</pre>
+</div></li>
+</ul>
 </div>
 </div>
 </div>
