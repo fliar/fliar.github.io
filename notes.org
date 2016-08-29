@@ -423,6 +423,10 @@
 	 sudo -u vbox vboxwebsrv -b &>> /dev/null # -b:daemon, discard output, this will not work on ubuntu 16.04
 	 sudo pkill vboxwebsrv # kill if needed
 	 #+END_SRC
+**** Mounting smb folder
+     #+BEGIN_SRC shell
+     sudo mount -t cifs -o user=fliar //192.168.111.111/dl /mnt/111dl/
+     #+END_SRC
 *** CentOS
 **** distcc installation on centos 6.7
 	 - install prerequisities

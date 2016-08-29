@@ -6,6 +6,8 @@
 
 * 2016
 ** August
+*** <2016-08-29 Mon>
+**** [[file:note.org::* Mounting smb folder][Mounting smb folder]]					     :debian:
 *** <2016-08-15 Mon>
 **** [[file:notes.org::* enable/disable .DS_Store][enable/disable .DS_Store]]											:mac:
 ** June
