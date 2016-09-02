@@ -230,6 +230,18 @@
 	- enable vrdp by vm -> setting -> display -> enable server
 	- specify a port number, verify method should be null
 	- on windows: use mstsc.exe to connect 127.0.0.1:PORT
+*** mounting an iso
+	- identify the port and device
+	  #+BEGIN_SRC shell
+	  $ suvboxm showvminfo 'VMName' | grep IDE #suvboxm is short for vboxmanage
+	  Storage Controller Name (0):            IDE
+	  IDE (0, 0): ... # normally hard drive
+	  IDE (1, 0): ... # cdrom(port, device)
+	  #+END_SRC
+	- mount iso
+	  #+BEGIN_SRC shell
+	  suvboxm storageattach 'VMName' --storagectl IDE --port 1 --device 0 --type dvddrive --medium 'path/to/iso'
+	  #+END_SRC
 ** curl
 *** post form using curl
 	using ~-d~ param and split fields with ~&~:
