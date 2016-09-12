@@ -439,6 +439,53 @@
      #+BEGIN_SRC shell
      sudo mount -t cifs -o user=fliar //192.168.111.111/dl /mnt/111dl/
      #+END_SRC
+**** ZeroTier One gateway full tunnel setup
+	 - referring [[https://www.zerotier.com/community/topic/69/default-route-override-a-k-a-full-tunnel-in-1-1-6][original link]], if forward all A network request to B
+	 - both side:
+	   - install zerotier-one
+		 #+BEGIN_SRC shell
+	      curl -s https://install.zerotier.com/ | bash
+		 #+END_SRC
+	 - B side:
+	   - enable ip forward in /etc/sysctl.conf
+		 #+BEGIN_SRC shell
+		 net.ipv4.ip_forward = 1
+		 #+END_SRC
+	   - setup iptables rules, save in /etc/iptables/rules.v4 for instance
+		 #+BEGIN_SRC shell
+		 # zt+ is your zerotier virtual interface
+		 # eth0 is your physical network interface
+		 # 10.6.4.0/22 is your zerotier subnet mask
+		 # 45.32.69.220 is your gate machine ip, local ip address is ok
+		 # remember there's a new line before eof
+		 *nat
+		 :PREROUTING ACCEPT [0:0]
+		 :INPUT ACCEPT [0:0]
+		 :OUTPUT ACCEPT [0:0]
+		 :POSTROUTING ACCEPT [0:0]
+		 -A POSTROUTING -o eth0 -s 10.6.4.0/22 -j SNAT --to-source 45.32.69.220
+		 COMMIT
+		 *filter
+		 :INPUT ACCEPT [0:0]
+		 :FORWARD DROP [0:0]
+		 -A FORWARD -i zt+ -s 10.6.4.0/22 -d 0.0.0.0/0 -j ACCEPT
+		 -A FORWARD -i eth0 -s 0.0.0.0/0 -d 10.6.4.0/0 -j ACCEPT
+		 :OUTPUT ACCEPT [0:0]
+		 COMMIT
+
+		 #+END_SRC
+	 - add a default route in zerotier central
+	   - network/bits 0.0.0.0/0
+	   - LAN zerotier ip of B
+	 - A side:
+	   - allow default route override
+		 #+BEGIN_SRC shell
+		 sudo zerotier-cli set <network ID> allowDefault=1
+		 #+END_SRC
+	   - if OS is linux:
+		 #+BEGIN_SRC shell
+		 sudo sysctl -w net.ipv4.conf.all.rp_filter=2
+		 #+END_SRC
 *** CentOS
 **** distcc installation on centos 6.7
 	 - install prerequisities

@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-09-12 Mon 15:51 -->
+<!-- 2016-09-12 Mon 17:52 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Notes</title>
@@ -100,7 +100,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline47">Linux</a>
+<li><a href="#orgheadline48">Linux</a>
 <ul>
 <li><a href="#orgheadline29">Tools</a>
 <ul>
@@ -108,30 +108,30 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline28">bash</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline46">Distributions</a>
+<li><a href="#orgheadline47">Distributions</a>
 <ul>
 <li><a href="#orgheadline38">Ubuntu</a></li>
-<li><a href="#orgheadline42">Debian</a></li>
-<li><a href="#orgheadline45">CentOS</a></li>
+<li><a href="#orgheadline43">Debian</a></li>
+<li><a href="#orgheadline46">CentOS</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline53">Windows</a>
+<li><a href="#orgheadline54">Windows</a>
 <ul>
-<li><a href="#orgheadline52">Tools</a>
+<li><a href="#orgheadline53">Tools</a>
 <ul>
-<li><a href="#orgheadline49">Auto Hot Key</a></li>
-<li><a href="#orgheadline51">cygwin</a></li>
+<li><a href="#orgheadline50">Auto Hot Key</a></li>
+<li><a href="#orgheadline52">cygwin</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline57">Mac</a>
+<li><a href="#orgheadline58">Mac</a>
 <ul>
-<li><a href="#orgheadline56">System</a>
+<li><a href="#orgheadline57">System</a>
 <ul>
-<li><a href="#orgheadline55">Finder</a></li>
+<li><a href="#orgheadline56">Finder</a></li>
 </ul>
 </li>
 </ul>
@@ -683,9 +683,9 @@ using <code>-d</code> param and split fields with <code>&amp;</code>:
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline47" class="outline-2">
-<h2 id="orgheadline47">Linux</h2>
-<div class="outline-text-2" id="text-orgheadline47">
+<div id="outline-container-orgheadline48" class="outline-2">
+<h2 id="orgheadline48">Linux</h2>
+<div class="outline-text-2" id="text-orgheadline48">
 </div><div id="outline-container-orgheadline29" class="outline-3">
 <h3 id="orgheadline29">Tools</h3>
 <div class="outline-text-3" id="text-orgheadline29">
@@ -737,9 +737,9 @@ note that there's no space in the equation, the backslash prevents rescursive 's
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline46" class="outline-3">
-<h3 id="orgheadline46">Distributions</h3>
-<div class="outline-text-3" id="text-orgheadline46">
+<div id="outline-container-orgheadline47" class="outline-3">
+<h3 id="orgheadline47">Distributions</h3>
+<div class="outline-text-3" id="text-orgheadline47">
 </div><div id="outline-container-orgheadline38" class="outline-4">
 <h4 id="orgheadline38">Ubuntu</h4>
 <div class="outline-text-4" id="text-orgheadline38">
@@ -959,9 +959,9 @@ edit autorun.sh to add app
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline42" class="outline-4">
-<h4 id="orgheadline42">Debian</h4>
-<div class="outline-text-4" id="text-orgheadline42">
+<div id="outline-container-orgheadline43" class="outline-4">
+<h4 id="orgheadline43">Debian</h4>
+<div class="outline-text-4" id="text-orgheadline43">
 </div><div id="outline-container-orgheadline39" class="outline-5">
 <h5 id="orgheadline39">VirtualBox addon installation</h5>
 <div class="outline-text-5" id="text-orgheadline39">
@@ -1071,13 +1071,93 @@ sudo pkill vboxwebsrv <span style="color: #b22222;"># </span><span style="color:
 </div>
 </div>
 </div>
+<div id="outline-container-orgheadline42" class="outline-5">
+<h5 id="orgheadline42">ZeroTier One gateway full tunnel setup</h5>
+<div class="outline-text-5" id="text-orgheadline42">
+<ul class="org-ul">
+<li>referring <a href="https://www.zerotier.com/community/topic/69/default-route-override-a-k-a-full-tunnel-in-1-1-6">original link</a>, if forward all A network request to B</li>
+<li>both side:
+<ul class="org-ul">
+<li><p>
+install zerotier-one
+</p>
+<div class="org-src-container">
+
+<pre class="src src-shell">curl -s https://install.zerotier.com/ | bash
+</pre>
+</div></li>
+</ul></li>
+<li>B side:
+<ul class="org-ul">
+<li><p>
+enable ip forward in /etc/sysctl.conf
+</p>
+<div class="org-src-container">
+
+<pre class="src src-shell">net.ipv4.ip_forward = 1
+</pre>
+</div></li>
+<li><p>
+setup iptables rules, save in /etc/iptables/rules.v4 for instance
+</p>
+<div class="org-src-container">
+
+<pre class="src src-shell"><span style="color: #b22222;"># </span><span style="color: #b22222;">zt+ is your zerotier virtual interface</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">eth0 is your physical network interface</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">10.6.4.0/22 is your zerotier subnet mask</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">45.32.69.220 is your gate machine ip, local ip address is ok</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">remember there's a new line before eof</span>
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+-A POSTROUTING -o eth0 -s 10.6.4.0/22 -j SNAT --to-source 45.32.69.220
+COMMIT
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD DROP [0:0]
+-A FORWARD -i zt+ -s 10.6.4.0/22 -d 0.0.0.0/0 -j ACCEPT
+-A FORWARD -i eth0 -s 0.0.0.0/0 -d 10.6.4.0/0 -j ACCEPT
+:OUTPUT ACCEPT [0:0]
+COMMIT
+</pre>
+</div></li>
+</ul></li>
+<li>add a default route in zerotier central
+<ul class="org-ul">
+<li>network/bits 0.0.0.0/0</li>
+<li>LAN zerotier ip of B</li>
+</ul></li>
+<li>A side:
+<ul class="org-ul">
+<li><p>
+allow default route override
+</p>
+<div class="org-src-container">
+
+<pre class="src src-shell">sudo zerotier-cli set &lt;network ID&gt; <span style="color: #a0522d;">allowDefault</span>=1
+</pre>
+</div></li>
+<li><p>
+if OS is linux:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-shell">sudo sysctl -w net.ipv4.conf.all.rp_filter=2
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-orgheadline45" class="outline-4">
-<h4 id="orgheadline45">CentOS</h4>
-<div class="outline-text-4" id="text-orgheadline45">
-</div><div id="outline-container-orgheadline43" class="outline-5">
-<h5 id="orgheadline43">distcc installation on centos 6.7</h5>
-<div class="outline-text-5" id="text-orgheadline43">
+</div>
+</div>
+<div id="outline-container-orgheadline46" class="outline-4">
+<h4 id="orgheadline46">CentOS</h4>
+<div class="outline-text-4" id="text-orgheadline46">
+</div><div id="outline-container-orgheadline44" class="outline-5">
+<h5 id="orgheadline44">distcc installation on centos 6.7</h5>
+<div class="outline-text-5" id="text-orgheadline44">
 <ul class="org-ul">
 <li><p>
 install prerequisities
@@ -1169,9 +1249,9 @@ monitor building status
 </div>
 </div>
 
-<div id="outline-container-orgheadline44" class="outline-5">
-<h5 id="orgheadline44">ntp for time update</h5>
-<div class="outline-text-5" id="text-orgheadline44">
+<div id="outline-container-orgheadline45" class="outline-5">
+<h5 id="orgheadline45">ntp for time update</h5>
+<div class="outline-text-5" id="text-orgheadline45">
 <ul class="org-ul">
 <li><p>
 install ntp
@@ -1221,18 +1301,18 @@ check ntp status
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline53" class="outline-2">
-<h2 id="orgheadline53">Windows</h2>
-<div class="outline-text-2" id="text-orgheadline53">
-</div><div id="outline-container-orgheadline52" class="outline-3">
-<h3 id="orgheadline52">Tools</h3>
-<div class="outline-text-3" id="text-orgheadline52">
-</div><div id="outline-container-orgheadline49" class="outline-4">
-<h4 id="orgheadline49">Auto Hot Key</h4>
-<div class="outline-text-4" id="text-orgheadline49">
-</div><div id="outline-container-orgheadline48" class="outline-5">
-<h5 id="orgheadline48">nested if statement</h5>
-<div class="outline-text-5" id="text-orgheadline48">
+<div id="outline-container-orgheadline54" class="outline-2">
+<h2 id="orgheadline54">Windows</h2>
+<div class="outline-text-2" id="text-orgheadline54">
+</div><div id="outline-container-orgheadline53" class="outline-3">
+<h3 id="orgheadline53">Tools</h3>
+<div class="outline-text-3" id="text-orgheadline53">
+</div><div id="outline-container-orgheadline50" class="outline-4">
+<h4 id="orgheadline50">Auto Hot Key</h4>
+<div class="outline-text-4" id="text-orgheadline50">
+</div><div id="outline-container-orgheadline49" class="outline-5">
+<h5 id="orgheadline49">nested if statement</h5>
+<div class="outline-text-5" id="text-orgheadline49">
 <p>
 nested if is not allowed in ahk script:     
 </p>
@@ -1271,12 +1351,12 @@ you can wrap it to another function:
 </div>
 </div>
 
-<div id="outline-container-orgheadline51" class="outline-4">
-<h4 id="orgheadline51">cygwin</h4>
-<div class="outline-text-4" id="text-orgheadline51">
-</div><div id="outline-container-orgheadline50" class="outline-5">
-<h5 id="orgheadline50">default PS1 location</h5>
-<div class="outline-text-5" id="text-orgheadline50">
+<div id="outline-container-orgheadline52" class="outline-4">
+<h4 id="orgheadline52">cygwin</h4>
+<div class="outline-text-4" id="text-orgheadline52">
+</div><div id="outline-container-orgheadline51" class="outline-5">
+<h5 id="orgheadline51">default PS1 location</h5>
+<div class="outline-text-5" id="text-orgheadline51">
 <p>
 <b>/etc/bash.bashrc</b>
 </p>
@@ -1291,18 +1371,18 @@ you can wrap it to another function:
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline57" class="outline-2">
-<h2 id="orgheadline57">Mac</h2>
-<div class="outline-text-2" id="text-orgheadline57">
-</div><div id="outline-container-orgheadline56" class="outline-3">
-<h3 id="orgheadline56">System</h3>
-<div class="outline-text-3" id="text-orgheadline56">
-</div><div id="outline-container-orgheadline55" class="outline-4">
-<h4 id="orgheadline55">Finder</h4>
-<div class="outline-text-4" id="text-orgheadline55">
-</div><div id="outline-container-orgheadline54" class="outline-5">
-<h5 id="orgheadline54">enable/disable .DS_Store</h5>
-<div class="outline-text-5" id="text-orgheadline54">
+<div id="outline-container-orgheadline58" class="outline-2">
+<h2 id="orgheadline58">Mac</h2>
+<div class="outline-text-2" id="text-orgheadline58">
+</div><div id="outline-container-orgheadline57" class="outline-3">
+<h3 id="orgheadline57">System</h3>
+<div class="outline-text-3" id="text-orgheadline57">
+</div><div id="outline-container-orgheadline56" class="outline-4">
+<h4 id="orgheadline56">Finder</h4>
+<div class="outline-text-4" id="text-orgheadline56">
+</div><div id="outline-container-orgheadline55" class="outline-5">
+<h5 id="orgheadline55">enable/disable .DS_Store</h5>
+<div class="outline-text-5" id="text-orgheadline55">
 <p>
 .DS_Store is a file that stores custom attributes of its containing folder.
 the name is an abbreviation of Desktop Services Store

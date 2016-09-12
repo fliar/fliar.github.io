@@ -6,6 +6,8 @@
 
 * 2016
 ** September
+*** <2016-09-12 Mon>
+**** [[file:notes.org::* ZeroTier One gateway full tunnel setup][forward network request from A to B, using zerotier one]] 	   :zerotier:
 *** <2016-09-02 Fri>
 **** [[file:notes.org::* mounting an iso][Mounting iso from command line in virtualbox]]					   :vbox:
 ** August
