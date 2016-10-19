@@ -4,20 +4,21 @@
 <head>
     <meta charset="utf-8">
     <title>jQuery Demo</title>
-</head>
 
-<body>
-    <a href="https://jquery.com/">jQuery</a>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.js"></script>
     <script>
     // code here
-    $( document ).ready(function() {
-        $( "a" ).click(function( event ) {
-            alert("hihi prevent");
-            event.preventDefault();
-        });
+    $(document).ready(function(){
+        console.log("doc loaded");
+    });
+    $(window).load(function() {
+        console.log("window loaded");
     });
     </script>
+</head>
+
+<body>    
+    <iframe src="https://1369cc.github.io/pong/pong.html"></iframe>
 </body>
 
 </html>
