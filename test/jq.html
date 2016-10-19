@@ -6,22 +6,12 @@
     <title>jQuery Demo</title>
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.js"></script>
-    <script>
-    // code here
-    $(document).ready(function(){
-        console.log("doc loaded");
-    });
-    $(window).on('load', function() {
-        console.log("window loaded");
-    });
-    </script>
+    <script src="head.js"></script>    
 </head>
 
 <body>
-    <iframe src="https://1369cc.github.io/pong/pong.html" width="640" height="400"></iframe>
-    <script>
-        alert($("iframe").attr("src"));
-    </script>
+    <embed src="https://1369cc.github.io/pong/pong.html" width="640" height="400">
+    <script src="bodyend.js"></script>
 </body>
 
 </html>
